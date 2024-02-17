@@ -11,31 +11,66 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 # 窗体标题  用于定位游戏窗体
+DEBUG = True
 WINDOW_TITLE = "连连看"
 # 时间间隔随机生成 [MIN,MAX]
-TIME_INTERVAL_MAX = 0.06
-TIME_INTERVAL_MIN = 0.1
+TIME_INTERVAL_MAX = 0.6
+TIME_INTERVAL_MIN = 1
 # 游戏区域距离顶点的x偏移
-MARGIN_LEFT = 297
+MARGIN_LEFT = 195
 # 游戏区域距离顶点的y偏移
-MARGIN_HEIGHT = 145
+MARGIN_HEIGHT = 120
 # 横向的方块数量
 H_NUM = 10
 # 纵向的方块数量
 V_NUM = 10
 # 方块宽度
-POINT_WIDTH = 50
+POINT_WIDTH = 40
 # 方块高度
-POINT_HEIGHT = 50
+POINT_HEIGHT = 40
 # 空图像编号
 EMPTY_ID = 0
 # 切片处理时候的左上、右下坐标：
 SUB_LT_X = 8
 SUB_LT_Y = 8
-SUB_RB_X = 42
-SUB_RB_Y = 42
+SUB_RB_X = 32
+SUB_RB_Y = 32
 # 游戏的最多消除次数
-MAX_ROUND = 200
+MAX_ROUND = 10000
+WINDOW_X = 418
+WINDOW_Y = 182
+
+
+def debug_init():
+    global WINDOW_TITLE, TIME_INTERVAL_MAX, TIME_INTERVAL_MIN, MARGIN_LEFT, MARGIN_HEIGHT, H_NUM, V_NUM, \
+        POINT_HEIGHT, POINT_WIDTH, EMPTY_ID, SUB_LT_Y, SUB_RB_Y, SUB_LT_X, SUB_RB_X, MAX_ROUND, WINDOW_X, WINDOW_Y
+    WINDOW_TITLE = "连连看"
+    # 时间间隔随机生成 [MIN,MAX]
+    TIME_INTERVAL_MAX = 0.06
+    TIME_INTERVAL_MIN = 0.1
+    # 游戏区域距离顶点的x偏移
+    MARGIN_LEFT = 297
+    # 游戏区域距离顶点的y偏移
+    MARGIN_HEIGHT = 145
+    # 横向的方块数量
+    H_NUM = 10
+    # 纵向的方块数量
+    V_NUM = 10
+    # 方块宽度
+    POINT_WIDTH = 50
+    # 方块高度
+    POINT_HEIGHT = 50
+    # 空图像编号
+    EMPTY_ID = 0
+    # 切片处理时候的左上、右下坐标：
+    SUB_LT_X = 8
+    SUB_LT_Y = 8
+    SUB_RB_X = 42
+    SUB_RB_Y = 42
+    # 游戏的最多消除次数
+    MAX_ROUND = 200
+    WINDOW_X = 418
+    WINDOW_Y = 182
 
 
 def getGameWindow():
@@ -50,13 +85,15 @@ def getGameWindow():
 
     # 定位到游戏窗体
     # 置顶游戏窗口
-    win32gui.SetForegroundWindow(window)
+    # win32gui.SetForegroundWindow(window)
     pos = win32gui.GetWindowRect(window)
-    print("Game windows at " + str(pos))
     width = pos[2] - pos[0]
     height = pos[3] - pos[1]
+    win32gui.SetWindowPos(window, win32con.HWND_TOPMOST, WINDOW_X, WINDOW_Y, width, height, win32con.SWP_NOSIZE)
+    print("Game windows at " + str((WINDOW_X, WINDOW_Y)))
     print("size :", width, height)
-    return (pos[0], pos[1])
+    return (WINDOW_X, WINDOW_Y)
+
 
 def show_all(images):
     cnt = 0
@@ -72,6 +109,7 @@ def show_all(images):
 
     plt.show()
 
+
 def getScreenImage():
     print('Shot screen...')
     # 获取屏幕截图 Image类型对象
@@ -84,8 +122,8 @@ def getScreenImage():
 
 def get_empty_square():
     image = cv2.imread("empty.png")
-    plt.imshow(image)
-    plt.show()
+    # plt.imshow(image)
+    # plt.show()
     return image[SUB_LT_Y:SUB_RB_Y, SUB_LT_X:SUB_RB_X]
 
 
@@ -109,7 +147,8 @@ def getAllSquare(screen_image, game_pos):
             square = screen_image[game_y + y * POINT_HEIGHT:game_y + (y + 1) * POINT_HEIGHT,
                      game_x + x * POINT_WIDTH:game_x + (x + 1) * POINT_WIDTH]
             all_square.append(square)
-    # show_all(all_square)
+    if DEBUG:
+        show_all(all_square)
     # 因为有些图片的边缘会造成干扰，所以统一把图片往内缩小一圈
     # 对所有的方块进行处理 ，去掉边缘一圈后返回
     finalresult = []
@@ -130,19 +169,20 @@ def getAllSquare(screen_image, game_pos):
 # 判断列表中是否存在相同图形
 # 存在返回进行判断图片所在的id
 # 否则返回-1
-def same_image(img1,img2):
+def same_image(img1, img2):
     b = np.subtract(img1, img2)
     b[b == 255] = 0
     b[b == 1] = 0
     # 若标准差全为0 即两张图片没有区别
     return not np.any(b)
 
+
 def isImageExist(img, img_list):
     i = 0
     for existed_img in img_list:
         # 两个图片进行比较 返回的是两个图片的标准差
 
-        if same_image(img,existed_img):
+        if same_image(img, existed_img):
             return i
         i = i + 1
     return -1
@@ -181,7 +221,7 @@ def getAllSquareRecord(all_square_list, types):
     print("Change map...")
     record = []
     line = []
-    record.append([EMPTY_ID for i in range(V_NUM+2)])
+    record.append([EMPTY_ID for i in range(V_NUM + 2)])
     for square in all_square_list:
         num = 0
         for type in types:
@@ -192,7 +232,7 @@ def getAllSquareRecord(all_square_list, types):
         # 每列的数量为V_NUM
         # 那么当当前的line列表中存在V_NUM个方块时我们认为本列处理完毕
         if len(line) == V_NUM:
-            line.insert(0,EMPTY_ID)
+            line.insert(0, EMPTY_ID)
             line.append(EMPTY_ID)
             record.append(line)
             line = []
@@ -326,23 +366,27 @@ def autoRelease(result, game_x, game_y):
                                     n))
 
                                 # 计算当前两个位置的图片在游戏中应该存在的位置
-                                x1 = game_x + (j-1) * POINT_WIDTH
-                                y1 = game_y + (i-1) * POINT_HEIGHT
-                                x2 = game_x + (n-1) * POINT_WIDTH
-                                y2 = game_y + (m-1) * POINT_HEIGHT
-                                print("pos: " + str((x1,y1)) + " " + str((x2,y2)))
+                                x1 = game_x + (j - 1) * POINT_WIDTH
+                                y1 = game_y + (i - 1) * POINT_HEIGHT
+                                x2 = game_x + (n - 1) * POINT_WIDTH
+                                y2 = game_y + (m - 1) * POINT_HEIGHT
+                                print("pos: " + str((x1, y1)) + " " + str((x2, y2)))
                                 # 模拟鼠标点击第一个图片所在的位置
                                 win32api.SetCursorPos((x1 + POINT_WIDTH // 2, y1 + POINT_HEIGHT // 2))
-                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x1 + POINT_WIDTH // 2, y1 + POINT_HEIGHT // 2, 0, 0)
-                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x1 + POINT_WIDTH // 2, y1 + POINT_HEIGHT // 2, 0, 0)
+                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x1 + POINT_WIDTH // 2,
+                                                     y1 + POINT_HEIGHT // 2, 0, 0)
+                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x1 + POINT_WIDTH // 2,
+                                                     y1 + POINT_HEIGHT // 2, 0, 0)
 
                                 # 等待随机时间 ，防止检测
                                 time.sleep(random.uniform(TIME_INTERVAL_MIN, TIME_INTERVAL_MAX))
 
                                 # 模拟鼠标点击第二个图片所在的位置
                                 win32api.SetCursorPos((x2 + POINT_WIDTH // 2, y2 + POINT_HEIGHT // 2))
-                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x2 + POINT_WIDTH // 2, y2 + POINT_HEIGHT // 2, 0, 0)
-                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x2 + POINT_WIDTH // 2, y2 + POINT_HEIGHT // 2, 0, 0)
+                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x2 + POINT_WIDTH // 2,
+                                                     y2 + POINT_HEIGHT // 2, 0, 0)
+                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x2 + POINT_WIDTH // 2,
+                                                     y2 + POINT_HEIGHT // 2, 0, 0)
                                 time.sleep(random.uniform(TIME_INTERVAL_MIN, TIME_INTERVAL_MAX))
                                 # 执行消除后返回True
                                 return True
@@ -362,6 +406,7 @@ def autoRemove(squares, game_pos):
         cnt += 1
         # input()
 
+
 if __name__ == '__main__':
     # f = open('winlist.txt', 'w', encoding='utf-8')
     # # f = open('winlist.txt', 'w')
@@ -379,10 +424,12 @@ if __name__ == '__main__':
     #     f.write("句柄：" + str(hwnd) + " 标题：" + win32gui.GetWindowText(hwnd) + '\n')
     #
     # f.close()
-
+    if DEBUG:
+        debug_init()
     random.seed()
     # i. 定位游戏窗体
     game_pos = getGameWindow()
+
     time.sleep(1)
     # ii. 获取屏幕截图
     screen_image = getScreenImage()
