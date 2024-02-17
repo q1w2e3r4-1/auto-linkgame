@@ -8,6 +8,7 @@ from PIL import ImageGrab
 import time
 import random
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 
 # 窗体标题  用于定位游戏窗体
 WINDOW_TITLE = "连连看"
@@ -15,7 +16,7 @@ WINDOW_TITLE = "连连看"
 TIME_INTERVAL_MAX = 0.06
 TIME_INTERVAL_MIN = 0.1
 # 游戏区域距离顶点的x偏移
-MARGIN_LEFT = 395
+MARGIN_LEFT = 297
 # 游戏区域距离顶点的y偏移
 MARGIN_HEIGHT = 145
 # 横向的方块数量
@@ -52,8 +53,24 @@ def getGameWindow():
     win32gui.SetForegroundWindow(window)
     pos = win32gui.GetWindowRect(window)
     print("Game windows at " + str(pos))
+    width = pos[2] - pos[0]
+    height = pos[3] - pos[1]
+    print("size :", width, height)
     return (pos[0], pos[1])
 
+def show_all(images):
+    cnt = 0
+    for square in images:
+        x = cnt // 10
+        y = cnt % 10
+        idx = y * 10 + x + 1
+        plt.subplot(10, 10, idx)
+        plt.imshow(np.array(square))
+        plt.xticks([]), plt.yticks([])
+
+        cnt += 1
+
+    plt.show()
 
 def getScreenImage():
     print('Shot screen...')
@@ -65,6 +82,13 @@ def getScreenImage():
     return cv2.imread("screen.png")
 
 
+def get_empty_square():
+    image = cv2.imread("empty.png")
+    plt.imshow(image)
+    plt.show()
+    return image[SUB_LT_Y:SUB_RB_Y, SUB_LT_X:SUB_RB_X]
+
+
 def getAllSquare(screen_image, game_pos):
     print('Processing pictures...')
     # 通过游戏窗体定位
@@ -72,45 +96,53 @@ def getAllSquare(screen_image, game_pos):
     game_x = game_pos[0] + MARGIN_LEFT
     game_y = game_pos[1] + MARGIN_HEIGHT
     print(game_pos)
-    print((game_x,game_y))
     # 从游戏区域左上开始
     # 把图像按照具体大小切割成相同的小块
     # 切割标准是按照小块的横纵坐标
     # plt.imshow(screen_image)
     # plt.show()
     all_square = []
+
     for x in range(0, H_NUM):
         for y in range(0, V_NUM):
             # ndarray的切片方法 ： [纵坐标起始位置：纵坐标结束为止，横坐标起始位置：横坐标结束位置]
             square = screen_image[game_y + y * POINT_HEIGHT:game_y + (y + 1) * POINT_HEIGHT,
                      game_x + x * POINT_WIDTH:game_x + (x + 1) * POINT_WIDTH]
             all_square.append(square)
-            if x < 10 and y < 10:
-                idx = y * 10 + x + 1
-                plt.subplot(10,10,idx)
-                plt.imshow(np.array(square))
-                plt.xticks([]), plt.yticks([])
-                print(np.array(square).shape)
-    plt.show()
+    # show_all(all_square)
     # 因为有些图片的边缘会造成干扰，所以统一把图片往内缩小一圈
     # 对所有的方块进行处理 ，去掉边缘一圈后返回
     finalresult = []
+    # idx = 1
     for square in all_square:
         s = square[SUB_LT_Y:SUB_RB_Y, SUB_LT_X:SUB_RB_X]
         finalresult.append(s)
+        # if idx == 1:
+        #     plt.figure(figsize=(5, 5))
+        #     plt.imshow(np.array(s))
+        #     plt.xticks([]), plt.yticks([])
+        #     plt.savefig("empty.png", bbox_inches="tight", pad_inches=-0.1, dpi=13.7)
+        #     plt.show()
+        #     idx = 2
     return finalresult
 
 
 # 判断列表中是否存在相同图形
 # 存在返回进行判断图片所在的id
 # 否则返回-1
+def same_image(img1,img2):
+    b = np.subtract(img1, img2)
+    b[b == 255] = 0
+    b[b == 1] = 0
+    # 若标准差全为0 即两张图片没有区别
+    return not np.any(b)
+
 def isImageExist(img, img_list):
     i = 0
     for existed_img in img_list:
         # 两个图片进行比较 返回的是两个图片的标准差
-        b = np.subtract(existed_img, img)
-        # 若标准差全为0 即两张图片没有区别
-        if not np.any(b):
+
+        if same_image(img,existed_img):
             return i
         i = i + 1
     return -1
@@ -119,28 +151,25 @@ def isImageExist(img, img_list):
 def getAllSquareTypes(all_square):
     print("Init pictures types...")
     types = []
-    # number列表用来记录每个id的出现次数
-    number = []
     # 当前出现次数最多的方块
     # 这里我们默认出现最多的方块应该是空白块
-    nowid = 0
+    types.append(get_empty_square())
+    # nowid = 0
     for square in all_square:
-        input()  #TODO: remove it
         nid = isImageExist(square, types)
         # 如果这个图像不存在则插入列表
         if nid == -1:
             types.append(square)
-            number.append(1)
-        else:
-            # 若这个图像存在则给计数器 + 1
-            number[nid] = number[nid] + 1
-            if (number[nid] > number[nowid]):
-                nowid = nid
+        # else:
+        #     # 若这个图像存在则给计数器 + 1
+        #     number[nid] = number[nid] + 1
+        #     # if number[nid] > number[nowid]:
+        #     #     nowid = nid
     # 更新EMPTY_ID
     # 即判断在当前这张图中的空白块id
-    global EMPTY_ID
-    EMPTY_ID = nowid
-    print('EMPTY_ID = ' + str(EMPTY_ID))
+    # global EMPTY_ID
+    # EMPTY_ID = nowid
+    # print('EMPTY_ID = ' + str(EMPTY_ID))
     return types
 
 
@@ -152,20 +181,24 @@ def getAllSquareRecord(all_square_list, types):
     print("Change map...")
     record = []
     line = []
+    record.append([EMPTY_ID for i in range(V_NUM+2)])
     for square in all_square_list:
         num = 0
         for type in types:
-            res = cv2.subtract(square, type)
-            if not np.any(res):
+            if same_image(type, square):
                 line.append(num)
                 break
             num += 1
         # 每列的数量为V_NUM
         # 那么当当前的line列表中存在V_NUM个方块时我们认为本列处理完毕
         if len(line) == V_NUM:
-            print(line);
+            line.insert(0,EMPTY_ID)
+            line.append(EMPTY_ID)
             record.append(line)
             line = []
+    record.append([EMPTY_ID for i in range(V_NUM + 2)])
+    for line in record:
+        print(line)
     return record
 
 
@@ -275,6 +308,7 @@ def turnTwiceCheck(x1, y1, x2, y2, result):
 
 def autoRelease(result, game_x, game_y):
     # 遍历地图
+    # time.sleep(3)
     for i in range(0, len(result)):
         for j in range(0, len(result[0])):
             # 当前位置非空
@@ -288,14 +322,14 @@ def autoRelease(result, game_x, game_y):
                                 # 消除的两个位置设置为空
                                 result[i][j] = EMPTY_ID
                                 result[m][n] = EMPTY_ID
-                                print('Remove ：' + str(i + 1) + ',' + str(j + 1) + ' and ' + str(m + 1) + ',' + str(
-                                    n + 1))
+                                print('Remove ：' + str(i) + ',' + str(j) + ' and ' + str(m) + ',' + str(
+                                    n))
 
                                 # 计算当前两个位置的图片在游戏中应该存在的位置
-                                x1 = game_x + j * POINT_WIDTH
-                                y1 = game_y + i * POINT_HEIGHT
-                                x2 = game_x + n * POINT_WIDTH
-                                y2 = game_y + m * POINT_HEIGHT
+                                x1 = game_x + (j-1) * POINT_WIDTH
+                                y1 = game_y + (i-1) * POINT_HEIGHT
+                                x2 = game_x + (n-1) * POINT_WIDTH
+                                y2 = game_y + (m-1) * POINT_HEIGHT
                                 print("pos: " + str((x1,y1)) + " " + str((x2,y2)))
                                 # 模拟鼠标点击第一个图片所在的位置
                                 win32api.SetCursorPos((x1 + POINT_WIDTH // 2, y1 + POINT_HEIGHT // 2))
@@ -318,12 +352,15 @@ def autoRelease(result, game_x, game_y):
 def autoRemove(squares, game_pos):
     game_x = game_pos[0] + MARGIN_LEFT
     game_y = game_pos[1] + MARGIN_HEIGHT
+    cnt = 0
     # 重复一次消除直到到达最多消除次数
     while True:
         if not autoRelease(squares, game_x, game_y):
             # 当不再有可消除的方块时结束 ， 返回消除数量
-            return
-
+            return cnt
+        # time.sleep(1.0)
+        cnt += 1
+        # input()
 
 if __name__ == '__main__':
     # f = open('winlist.txt', 'w', encoding='utf-8')
@@ -353,6 +390,7 @@ if __name__ == '__main__':
     all_square_list = getAllSquare(screen_image, game_pos)
     # iv. 获取所有类型的图形，并编号
     types = getAllSquareTypes(all_square_list)
+    # print(type(types))
     # v. 讲获取的图片地图转换成数字矩阵
     result = np.transpose(getAllSquareRecord(all_square_list, types))
     # vi. 执行消除 , 并输出消除数量
