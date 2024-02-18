@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 # 窗体标题  用于定位游戏窗体
+from hinter import MainWindow
+
 DEBUG = True
 WINDOW_TITLE = "连连看"
 # 时间间隔随机生成 [MIN,MAX]
@@ -428,17 +430,21 @@ if __name__ == '__main__':
         debug_init()
     random.seed()
     # i. 定位游戏窗体
-    game_pos = getGameWindow()
-
+    # game_pos = getGameWindow()
+    game_pos = (WINDOW_X,WINDOW_Y) # TODO
     time.sleep(1)
     # ii. 获取屏幕截图
-    screen_image = getScreenImage()
+    # screen_image = getScreenImage()
+    screen_image = cv2.imread("screen.png") # TODO
     # iii. 对截图切片，形成一张二维地图
     all_square_list = getAllSquare(screen_image, game_pos)
+    # iii-2 创建窗体并绘制图像
+    m = MainWindow()
+
     # iv. 获取所有类型的图形，并编号
     types = getAllSquareTypes(all_square_list)
     # print(type(types))
     # v. 讲获取的图片地图转换成数字矩阵
     result = np.transpose(getAllSquareRecord(all_square_list, types))
     # vi. 执行消除 , 并输出消除数量
-    print('The total elimination amount is ' + str(autoRemove(result, game_pos)))
+    # print('The total elimination amount is ' + str(autoRemove(result, game_pos)))
