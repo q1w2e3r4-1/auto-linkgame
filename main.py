@@ -149,7 +149,8 @@ def getAllSquare(screen_image, game_pos):
                      game_x + x * POINT_WIDTH:game_x + (x + 1) * POINT_WIDTH]
             all_square.append(square)
     if DEBUG:
-        show_all(all_square)
+        # show_all(all_square)
+        pass
     # 因为有些图片的边缘会造成干扰，所以统一把图片往内缩小一圈
     # 对所有的方块进行处理 ，去掉边缘一圈后返回
     finalresult = []

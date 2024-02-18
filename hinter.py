@@ -108,7 +108,7 @@ class MainWindow:
         # 插入文字
         # self.text = self.canvas.create_text(100, 320, anchor='nw', text='哆啦A梦连连看', fill="white", fon=('华文彩云', 30))
         self.canvas.pack(side=tk.TOP, pady=5)
-        self.canvas.bind('<Button-1>')  # , self.clickCanvas)
+        self.canvas.bind('<Button-1>', self.func)  # , self.clickCanvas)
 
     def pos(self, i, j):
         x = self.X_OFFSET + j * self.POINT_WIDTH + self.PADDING
@@ -142,6 +142,24 @@ class MainWindow:
         p2 = self.pos(m, n) + (15, 15)
         self.canvas.create_oval(p1[0], p1[1], p1[0] + 25, p1[1] + 25, fill=self.colors[prior])
         self.canvas.create_oval(p2[0], p2[1], p2[0] + 25, p2[1] + 25, fill=self.colors[prior])
+
+    def func(self, event):
+        # ii. 获取屏幕截图
+        screen_image = main.getScreenImage()
+        # screen_image = cv2.imread("screen.png")  # TODO
+        # iii. 对截图切片，形成一张二维地图
+        all_square_list = getAllSquare(screen_image, game_pos)
+        # iii-2 创建窗体并绘制图像
+        hinter.draw_square(all_square_list, H_NUM, V_NUM)
+        print(POINT_WIDTH)
+        # iv. 获取所有类型的图形，并编号
+        types = getAllSquareTypes(all_square_list)
+        # print(type(types))
+        # v. 讲获取的图片地图转换成数字矩阵
+        result = np.transpose(getAllSquareRecord(all_square_list, types))
+        # vi. 执行消除 , 并输出消除数量
+        # print('The total elimination amount is ' + str(autoRemove(result, game_pos)))
+        autoHint(result)
 
 
 def hint_one(result, prior):
@@ -211,12 +229,12 @@ if __name__ == '__main__':
     hinter = MainWindow()
 
     # i. 定位游戏窗体
-    # game_pos = getGameWindow()
-    game_pos = (WINDOW_X, WINDOW_Y)  # TODO
+    game_pos = main.getGameWindow()
+    hinter.game_pos = game_pos
     time.sleep(1)
     # ii. 获取屏幕截图
-    # screen_image = getScreenImage()
-    screen_image = cv2.imread("screen.png")  # TODO
+    screen_image = main.getScreenImage()
+    # screen_image = cv2.imread("screen.png")  # TODO
     # iii. 对截图切片，形成一张二维地图
     all_square_list = getAllSquare(screen_image, game_pos)
     # iii-2 创建窗体并绘制图像
