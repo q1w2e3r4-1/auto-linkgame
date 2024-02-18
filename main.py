@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 # 窗体标题  用于定位游戏窗体
-from hinter import MainWindow
+from hinter import MainWindow, root
 
 DEBUG = True
 WINDOW_TITLE = "连连看"
@@ -429,6 +429,8 @@ if __name__ == '__main__':
     if DEBUG:
         debug_init()
     random.seed()
+    m = MainWindow()
+
     # i. 定位游戏窗体
     # game_pos = getGameWindow()
     game_pos = (WINDOW_X,WINDOW_Y) # TODO
@@ -439,7 +441,7 @@ if __name__ == '__main__':
     # iii. 对截图切片，形成一张二维地图
     all_square_list = getAllSquare(screen_image, game_pos)
     # iii-2 创建窗体并绘制图像
-    m = MainWindow()
+    m.draw_square(all_square_list, H_NUM,  V_NUM)
 
     # iv. 获取所有类型的图形，并编号
     types = getAllSquareTypes(all_square_list)
@@ -448,3 +450,4 @@ if __name__ == '__main__':
     result = np.transpose(getAllSquareRecord(all_square_list, types))
     # vi. 执行消除 , 并输出消除数量
     # print('The total elimination amount is ' + str(autoRemove(result, game_pos)))
+    root.mainloop()
