@@ -13,33 +13,33 @@ import matplotlib.image as mpimg
 # 窗体标题  用于定位游戏窗体
 
 DEBUG = True
-WINDOW_TITLE = "LetsView[屏幕镜像]"
+WINDOW_TITLE = "AnLink"
 # 时间间隔随机生成 [MIN,MAX]
 TIME_INTERVAL_MAX = 0.6
 TIME_INTERVAL_MIN = 1
 # 游戏区域距离顶点的x偏移
-MARGIN_LEFT = 279
+MARGIN_LEFT = 159
 # 游戏区域距离顶点的y偏移
-MARGIN_HEIGHT = 317
+MARGIN_HEIGHT = 275
 # 横向的方块数量
 H_NUM = 7
 # 纵向的方块数量
 V_NUM = 10
 # 方块宽度
-POINT_WIDTH = 48
+POINT_WIDTH = 50
 # 方块高度
-POINT_HEIGHT = 47
+POINT_HEIGHT = 50
 # 空图像编号
 EMPTY_ID = 0
 # 切片处理时候的左上、右下坐标：
 SUB_LT_X = 8
 SUB_LT_Y = 8
-SUB_RB_X = 32
-SUB_RB_Y = 32
+SUB_RB_X = 40
+SUB_RB_Y = 40
 # 游戏的最多消除次数
 MAX_ROUND = 10000
-WINDOW_X = 1000
-WINDOW_Y = 100
+WINDOW_X = 900
+WINDOW_Y = 50
 
 
 def debug_init():
@@ -122,7 +122,7 @@ def getScreenImage():
 
 
 def get_empty_square():
-    image = cv2.imread("empty.png")
+    image = cv2.imread("empty.png")[:, :, ::-1]
     # plt.imshow(image)
     # plt.show()
     return image[SUB_LT_Y:SUB_RB_Y, SUB_LT_X:SUB_RB_X]
@@ -172,11 +172,9 @@ def getAllSquare(screen_image, game_pos):
 # 存在返回进行判断图片所在的id
 # 否则返回-1
 def same_image(img1, img2):
-    b = np.subtract(img1, img2)
-    b[b == 255] = 0
-    b[b == 1] = 0
+    b = cv2.subtract(img1, img2)
     # 若标准差全为0 即两张图片没有区别
-    return not np.any(b)
+    return np.all(b < 70)
 
 
 def isImageExist(img, img_list):
@@ -202,6 +200,8 @@ def getAllSquareTypes(all_square):
         # 如果这个图像不存在则插入列表
         if nid == -1:
             types.append(square)
+            plt.imshow(square)
+            # plt.show()
         # else:
         #     # 若这个图像存在则给计数器 + 1
         #     number[nid] = number[nid] + 1
@@ -231,6 +231,8 @@ def getAllSquareRecord(all_square_list, types):
                 line.append(num)
                 break
             num += 1
+        if num == len(types):
+            line.append(0)
         # 每列的数量为V_NUM
         # 那么当当前的line列表中存在V_NUM个方块时我们认为本列处理完毕
         if len(line) == V_NUM:

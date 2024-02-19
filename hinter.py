@@ -21,28 +21,28 @@ WINDOW_TITLE = "LetsView[屏幕镜像]"
 TIME_INTERVAL_MAX = 0.6
 TIME_INTERVAL_MIN = 1
 # 游戏区域距离顶点的x偏移
-MARGIN_LEFT = 279
+MARGIN_LEFT = 390 # 410
 # 游戏区域距离顶点的y偏移
-MARGIN_HEIGHT = 317
+MARGIN_HEIGHT = 263 # 303
 # 横向的方块数量
 H_NUM = 7
 # 纵向的方块数量
 V_NUM = 10
 # 方块宽度
-POINT_WIDTH = 48
+POINT_WIDTH = 55
 # 方块高度
-POINT_HEIGHT = 47
+POINT_HEIGHT = 53
 # 空图像编号
 EMPTY_ID = 0
 # 切片处理时候的左上、右下坐标：
 SUB_LT_X = 8
 SUB_LT_Y = 8
-SUB_RB_X = 32
-SUB_RB_Y = 32
+SUB_RB_X = 40
+SUB_RB_Y = 40
 # 游戏的最多消除次数
 MAX_ROUND = 10000
-WINDOW_X = 1000
-WINDOW_Y = 100
+WINDOW_X = 900
+WINDOW_Y = 50
 
 
 def debug_init():
@@ -94,8 +94,8 @@ def getAllSquare(screen_image, game_pos):
     for x in range(0, H_NUM):
         for y in range(0, V_NUM):
             # ndarray的切片方法 ： [纵坐标起始位置：纵坐标结束为止，横坐标起始位置：横坐标结束位置]
-            square = screen_image[game_y + y * POINT_HEIGHT - y // 2:game_y + (y + 1) * POINT_HEIGHT - y // 2,
-                     game_x + x * POINT_WIDTH + x // 2:game_x + (x + 1) * POINT_WIDTH + x // 2]
+            square = screen_image[game_y + y * POINT_HEIGHT:game_y + (y + 1) * POINT_HEIGHT,
+                     game_x + x * POINT_WIDTH:game_x + (x + 1) * POINT_WIDTH]
             all_square.append(square)
     if True: # TODO
         main.show_all(all_square)
@@ -114,6 +114,7 @@ def getAllSquare(screen_image, game_pos):
         #     plt.savefig("empty.png", bbox_inches="tight", pad_inches=-0.1, dpi=13.7)
         #     plt.show()
         #     idx = 2
+
     return finalresult
 
 class MainWindow:
@@ -124,7 +125,7 @@ class MainWindow:
     POINT_HEIGHT = 40
     X_OFFSET = 40
     Y_OFFSET = 80
-    PADDING = 3
+    PADDING = 5
     colors = ['red', 'yellow', 'green']
 
     def __init__(self):
@@ -266,24 +267,22 @@ if __name__ == '__main__':
     hinter = MainWindow()
 
     # i. 定位游戏窗体
-    # game_pos = main.getGameWindow()
-    game_pos = (WINDOW_X, WINDOW_Y)
+    game_pos = main.getGameWindow()
+    # game_pos = (WINDOW_X, WINDOW_Y)
     hinter.game_pos = game_pos
     # time.sleep(1)
     # # ii. 获取屏幕截图
-    # screen_image = getScreenImage()
-    screen_image = cv2.imread("screen.png")[:, :, ::-1]  # TODO
-    # # iii. 对截图切片，形成一张二维地图
+    screen_image = main.getScreenImage()
+    # screen_image = cv2.imread("screen.png")[:, :, ::-1]  # TODO
+    # # # iii. 对截图切片，形成一张二维地图
     all_square_list = getAllSquare(screen_image, game_pos)
     # # iii-2 创建窗体并绘制图像
-    # hinter.draw_square(all_square_list, H_NUM, V_NUM)
-    # print(POINT_WIDTH)
+    hinter.draw_square(all_square_list, V_NUM, H_NUM)
     # # iv. 获取所有类型的图形，并编号
-    # types = getAllSquareTypes(all_square_list)
-    # # print(type(types))
+    types = getAllSquareTypes(all_square_list)
+    print(len(types))
     # # v. 讲获取的图片地图转换成数字矩阵
-    # result = np.transpose(getAllSquareRecord(all_square_list, types))
-    # # vi. 执行消除 , 并输出消除数量
-    # # print('The total elimination amount is ' + str(autoRemove(result, game_pos)))
-    # autoHint(result)
+    result = np.transpose(getAllSquareRecord(all_square_list, types))
+    # # vi. 进行提示
+    autoHint(result)
     root.mainloop()
