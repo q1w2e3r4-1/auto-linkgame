@@ -1,612 +1,499 @@
-句柄：132166 标题：Windows 输入体验
-句柄：66662 标题：
-句柄：66660 标题：
-句柄：66664 标题：
-句柄：66736 标题：
-句柄：66734 标题：
-句柄：66738 标题：
-句柄：66712 标题：
+句柄：66698 标题：Windows 输入体验
 句柄：66710 标题：
-句柄：66714 标题：
-句柄：197684 标题：
-句柄：263224 标题：
-句柄：66692 标题：
-句柄：66608 标题：
-句柄：66606 标题：
-句柄：66610 标题：
-句柄：330330 标题：DesktopWindowXamlSource
-句柄：920110 标题：
-句柄：199082 标题：任务切换
-句柄：199182 标题：DesktopWindowXamlSource
-句柄：199186 标题：
-句柄：66136 标题：
-句柄：199014 标题：
-句柄：131598 标题：
-句柄：65984 标题：
+句柄：66708 标题：
+句柄：66712 标题：
+句柄：66786 标题：
+句柄：66784 标题：
+句柄：66788 标题：
+句柄：66754 标题：
+句柄：66752 标题：
+句柄：66756 标题：
+句柄：66730 标题：
+句柄：66728 标题：
+句柄：66732 标题：
+句柄：525268 标题：
+句柄：131920 标题：
+句柄：328716 标题：
+句柄：68006 标题：DesktopWindowXamlSource
+句柄：68008 标题：
+句柄：68096 标题：任务切换
+句柄：68098 标题：DesktopWindowXamlSource
+句柄：68100 标题：
+句柄：66146 标题：
+句柄：131580 标题：
+句柄：15075798 标题：
+句柄：66006 标题：
+句柄：65980 标题：
+句柄：65976 标题：
+句柄：65970 标题：
 句柄：65964 标题：
 句柄：65960 标题：
 句柄：65954 标题：
-句柄：65948 标题：
-句柄：65944 标题：
+句柄：393952 标题：
+句柄：66316 标题：
+句柄：66304 标题：CoreInput
+句柄：66002 标题：
 句柄：65936 标题：
-句柄：66206 标题：
-句柄：131772 标题：
-句柄：66214 标题：CoreInput
-句柄：65938 标题：
-句柄：65940 标题：溢出通知区域
-句柄：66342 标题：电池指示器
-句柄：66420 标题：
-句柄：66444 标题：Network Flyout
-句柄：66442 标题：
-句柄：65980 标题：
-句柄：131356 标题：
-句柄：66368 标题：DesktopWindowXamlSource
-句柄：131380 标题：开始
-句柄：65928 标题：
-句柄：65930 标题：
-句柄：65932 标题：
-句柄：65934 标题：
-句柄：65946 标题：系统升级的通知区域
+句柄：131956 标题：DesktopWindowXamlSource
+句柄：65944 标题：开始
+句柄：65946 标题：
+句柄：65948 标题：
 句柄：65950 标题：
-句柄：65952 标题：用户提示通知区域
-句柄：65956 标题：任务栏输入指示
-句柄：65958 标题：
-句柄：65962 标题：
-句柄：131450 标题：
-句柄：65970 标题：
-句柄：65976 标题：运行中的应用程序
-句柄：65978 标题：运行中的应用程序
-句柄：66408 标题：DesktopWindowXamlSource
-句柄：66414 标题：
-句柄：133596 标题：系统托盘溢出窗口。
-句柄：133598 标题：DesktopWindowXamlSource
-句柄：199130 标题：
-句柄：132330 标题：Menu
-句柄：132328 标题：
-句柄：132332 标题：
-句柄：196900 标题：
-句柄：197532 标题：HPSystemEventUtilityHost.OSD.HubsLauncher
-句柄：196886 标题：HPSystemEventUtilityHost.OsdHelper
-句柄：196890 标题：CiceroUIWndFrame
-句柄：131392 标题：
-句柄：131384 标题：
-句柄：67546 标题：CiceroUIWndFrame
-句柄：67232 标题：
-句柄：67228 标题：
-句柄：67224 标题：
-句柄：67220 标题：
-句柄：67216 标题：
-句柄：67212 标题：
-句柄：67208 标题：
-句柄：67204 标题：
-句柄：67200 标题：
-句柄：67196 标题：
-句柄：67192 标题：
-句柄：67188 标题：
-句柄：67184 标题：
-句柄：67180 标题：
-句柄：67090 标题：
-句柄：67092 标题：
-句柄：67084 标题：
-句柄：67086 标题：
-句柄：67078 标题：
-句柄：67080 标题：
-句柄：67072 标题：
-句柄：67074 标题：
-句柄：67066 标题：
-句柄：67068 标题：
-句柄：67054 标题：iFLYAssistant
-句柄：66982 标题：
-句柄：66984 标题：
-句柄：66976 标题：
-句柄：66978 标题：
-句柄：66970 标题：
-句柄：66972 标题：
-句柄：66960 标题：Menu
-句柄：66962 标题：
-句柄：66954 标题：
-句柄：66956 标题：
-句柄：66872 标题：
-句柄：66870 标题：tool_tips
-句柄：66014 标题：
-句柄：196698 标题：
-句柄：65774 标题：我的程序设置
-句柄：65778 标题：
-句柄：65780 标题：添加...
-句柄：199210 标题：
-句柄：131192 标题：lianliankan – winlist.txt Administrator
-句柄：330274 标题：连连看
-句柄：461268 标题：
-句柄：68188 标题：
-句柄：788672 标题：
-句柄：264434 标题：DesktopWindowXamlSource
-句柄：2492880 标题：
-句柄：919938 标题：TclNotifier
-句柄：723138 标题：DesktopWindowXamlSource
-句柄：330268 标题：EmbeddedMenuWindow
-句柄：788656 标题：MenuWindow
-句柄：657574 标题：TtkMonitorWindow
-句柄：788830 标题：123 – main.py Administrator
-句柄：526516 标题：main.py - Visual Studio Code [管理员]
-句柄：1116456 标题：Chrome Legacy Window
-句柄：461304 标题：
-句柄：1246986 标题：
-句柄：327950 标题：
-句柄：919690 标题：
-句柄：395824 标题：Code
-句柄：919856 标题：Chrome Legacy Window
-句柄：657556 标题：
-句柄：1049586 标题：
-句柄：592024 标题：
-句柄：657404 标题：
-句柄：854318 标题：
-句柄：526482 标题：
-句柄：788882 标题：
-句柄：461298 标题：
-句柄：525912 标题：还原页面
-句柄：263760 标题：
-句柄：197436 标题：
-句柄：196700 标题：pycharm运行python文件却打开了vscode - 搜索 和另外 3 个页面 - 个人 - Microsoft​ Edge
-句柄：133114 标题：
-句柄：131180 标题：
-句柄：264524 标题：
-句柄：590638 标题：
-句柄：133438 标题：123123123
-句柄：133516 标题：
-句柄：199020 标题：123123123
-句柄：133398 标题：
-句柄：133404 标题：
-句柄：133402 标题：
-句柄：133400 标题：命名空间树状控制项
-句柄：133396 标题：命名空间树状控制项
-句柄：133394 标题：导航窗格
-句柄：330094 标题：
-句柄：133488 标题：
-句柄：133490 标题：
-句柄：264402 标题：
-句柄：330036 标题：
-句柄：329956 标题：Shell Preview Extension Host
-句柄：330158 标题：
-句柄：524740 标题：ShellView
-句柄：133676 标题：
-句柄：592164 标题：
-句柄：460542 标题：
-句柄：395748 标题：
-句柄：395750 标题：
-句柄：133542 标题：
-句柄：133540 标题：
-句柄：264534 标题：
-句柄：985500 标题：
-句柄：133514 标题：
-句柄：458874 标题：
-句柄：67498 标题：
+句柄：65952 标题：
+句柄：65962 标题：系统升级的通知区域
+句柄：65966 标题：
+句柄：65968 标题：用户提示通知区域
+句柄：65972 标题：任务栏输入指示
+句柄：65974 标题：
+句柄：65978 标题：
+句柄：65982 标题：
+句柄：65988 标题：
+句柄：65990 标题：运行中的应用程序
+句柄：66000 标题：运行中的应用程序
+句柄：131788 标题：DesktopWindowXamlSource
+句柄：197322 标题：
+句柄：65956 标题：
+句柄：65958 标题：溢出通知区域
+句柄：131872 标题：电池指示器
+句柄：66440 标题：
+句柄：66456 标题：Network Flyout
+句柄：131990 标题：
+句柄：66038 标题：
+句柄：394694 标题：CiceroUIWndFrame
+句柄：198638 标题：系统托盘溢出窗口。
+句柄：524654 标题：DesktopWindowXamlSource
+句柄：131182 标题：
+句柄：394928 标题：
+句柄：67622 标题：
+句柄：263236 标题：iFLYAssistant
+句柄：131420 标题：HPSystemEventUtilityHost.OSD.HubsLauncher
+句柄：131116 标题：HPSystemEventUtilityHost.OsdHelper
+句柄：131382 标题：CiceroUIWndFrame
+句柄：197584 标题：CiceroUIWndFrame
+句柄：132894 标题：Menu
+句柄：132896 标题：
+句柄：132898 标题：
+句柄：132900 标题：Chrome Legacy Window
+句柄：131860 标题：
+句柄：65838 标题：
+句柄：65792 标题：我的程序设置
+句柄：131326 标题：
+句柄：65796 标题：添加...
+句柄：657554 标题：lianliankan – hinter.py Administrator
+句柄：133782 标题：
+句柄：1182186 标题：LetsView[屏幕镜像]
+句柄：1835712 标题：
+句柄：199296 标题：
+句柄：199304 标题：
+句柄：656184 标题：
+句柄：330284 标题：theAwtToolkitWindow
+句柄：1247612 标题：
+句柄：395578 标题：
+句柄：68134 标题：
+句柄：526468 标题：C:\WINDOWS\system32\cmd.exe
+句柄：1967896 标题：C:\WINDOWS\system32\cmd.exe
+句柄：525886 标题：SystemResourceNotifyWindow
+句柄：919074 标题：
+句柄：852956 标题：CiceroUIWndFrame
+句柄：329990 标题：
+句柄：264406 标题：.NET-BroadcastEventWindow.4.0.0.0.3ffa4df.0
+句柄：526498 标题：MediaContextNotificationWindow
+句柄：460978 标题：GDI+ Window (Letsview.exe)
+句柄：198964 标题：
+句柄：65932 标题：
+句柄：525270 标题：
+句柄：198968 标题：DDE Server Window
+句柄：461116 标题：OfficePowerManagerWindow
+句柄：199066 标题：
+句柄：329228 标题：
+句柄：264238 标题：DesktopWindowXamlSource
+句柄：591176 标题：
+句柄：67982 标题：
+句柄：67814 标题：
+句柄：133372 标题：
+句柄：198904 标题：
+句柄：67844 标题：
+句柄：67740 标题：
+句柄：67736 标题：
+句柄：67714 标题：Chrome Legacy Window
+句柄：67726 标题：
+句柄：67584 标题：
+句柄：67660 标题：
+句柄：67656 标题：
+句柄：67650 标题：
+句柄：67642 标题：
+句柄：67626 标题：
+句柄：918500 标题：
+句柄：394326 标题：
+句柄：394674 标题：
+句柄：198224 标题：Chrome Legacy Window
+句柄：196722 标题：
+句柄：264178 标题：
+句柄：525328 标题：
+句柄：459868 标题：
+句柄：198078 标题：
+句柄：197274 标题：
+句柄：852668 标题：
+句柄：1639746 标题：Chrome Legacy Window
+句柄：198316 标题：Chrome Legacy Window
+句柄：526334 标题：Chrome Legacy Window
+句柄：198102 标题：
+句柄：198140 标题：
+句柄：263738 标题：
+句柄：721990 标题：
+句柄：132636 标题：
+句柄：394696 标题：GDI+ Window (Explorer.EXE)
+句柄：328794 标题：
+句柄：133098 标题：{30A1588D-127B-4CC0-BA47-B11825F07731}
+句柄：133110 标题：{03374DBB-D3AF-4A0B-AFC2-C2F5E0DB82A9}
+句柄：133072 标题：GDI+ Window (OmenCommandCenterBackground.exe)
+句柄：67558 标题：
+句柄：67546 标题：Chrome Legacy Window
+句柄：197412 标题：Chrome Legacy Window
+句柄：197262 标题：Chrome Legacy Window
+句柄：67522 标题：Chrome Legacy Window
+句柄：67506 标题：Chrome Legacy Window
+句柄：67490 标题：Chrome Legacy Window
+句柄：67474 标题：Chrome Legacy Window
+句柄：67458 标题：Chrome Legacy Window
+句柄：67442 标题：Chrome Legacy Window
+句柄：67426 标题：Chrome Legacy Window
+句柄：67410 标题：Chrome Legacy Window
+句柄：67394 标题：Chrome Legacy Window
+句柄：67378 标题：Chrome Legacy Window
+句柄：394184 标题：CiceroUIWndFrame
+句柄：67552 标题：OMEN Background Process
+句柄：67550 标题：Hidden Window
+句柄：67548 标题：DDE Server Window
+句柄：198154 标题：
+句柄：198152 标题：
+句柄：67540 标题：
+句柄：67526 标题：
+句柄：67516 标题：
+句柄：67518 标题：
+句柄：67520 标题：
+句柄：67530 标题：
 句柄：67500 标题：
 句柄：67502 标题：
-句柄：67512 标题：
-句柄：67482 标题：
+句柄：67504 标题：
+句柄：67514 标题：
 句柄：67484 标题：
 句柄：67486 标题：
-句柄：67496 标题：
-句柄：67466 标题：
+句柄：67488 标题：
+句柄：67498 标题：
 句柄：67468 标题：
 句柄：67470 标题：
-句柄：67480 标题：
-句柄：67450 标题：
+句柄：67472 标题：
+句柄：67482 标题：
 句柄：67452 标题：
 句柄：67454 标题：
-句柄：67464 标题：
-句柄：67434 标题：
+句柄：67456 标题：
+句柄：67466 标题：
 句柄：67436 标题：
 句柄：67438 标题：
-句柄：67448 标题：
-句柄：67418 标题：
+句柄：67440 标题：
+句柄：67450 标题：
 句柄：67420 标题：
 句柄：67422 标题：
-句柄：67424 标题：Chrome Legacy Window
-句柄：67432 标题：
-句柄：67402 标题：
+句柄：67424 标题：
+句柄：67434 标题：
 句柄：67404 标题：
 句柄：67406 标题：
-句柄：67416 标题：
-句柄：67386 标题：
+句柄：67408 标题：
+句柄：67418 标题：
 句柄：67388 标题：
 句柄：67390 标题：
-句柄：67400 标题：
-句柄：67370 标题：
+句柄：67392 标题：
+句柄：67402 标题：
 句柄：67372 标题：
 句柄：67374 标题：
-句柄：67384 标题：
-句柄：67354 标题：
-句柄：67356 标题：
-句柄：67358 标题：
-句柄：67368 标题：
-句柄：262804 标题：
-句柄：263246 标题：
-句柄：132106 标题：
-句柄：67352 标题：
-句柄：721352 标题：Steam
-句柄：67514 标题：
-句柄：67516 标题：
-句柄：1640168 标题：Chrome Legacy Window
-句柄：67526 标题：
-句柄：328112 标题：
-句柄：132044 标题：
-句柄：656296 标题：
-句柄：197858 标题：
-句柄：68020 标题：
-句柄：67896 标题：GDI+ Window (Explorer.EXE)
-句柄：132880 标题：
-句柄：657730 标题：Chrome Legacy Window
-句柄：395590 标题：Chrome Legacy Window
-句柄：133310 标题：Chrome Legacy Window
-句柄：198414 标题：Chrome Legacy Window
-句柄：197338 标题：
-句柄：131436 标题：
-句柄：394716 标题：
-句柄：131176 标题：
-句柄：197610 标题：theAwtToolkitWindow
-句柄：131934 标题：
-句柄：131138 标题：NvSvc
-句柄：197344 标题：UxdService
-句柄：67846 标题：
-句柄：133366 标题：
-句柄：67820 标题：
-句柄：133334 标题：
-句柄：133338 标题：WUIconWindow
-句柄：133104 标题：.NET-BroadcastEventWindow.2b89eaa.0
-句柄：67700 标题：
-句柄：133226 标题：
-句柄：67686 标题：设置
-句柄：131894 标题：设置
-句柄：198744 标题：
-句柄：131890 标题：
-句柄：133210 标题：
-句柄：67658 标题：
-句柄：67642 标题：
-句柄：67636 标题：
-句柄：67626 标题：
-句柄：133154 标题：
-句柄：67620 标题：Chrome Legacy Window
-句柄：67610 标题：
-句柄：67606 标题：
-句柄：67600 标题：
-句柄：67592 标题：
-句柄：67588 标题：
-句柄：263106 标题：
-句柄：131544 标题：.NET-BroadcastEventWindow.4.0.0.0.293cd4a.0
-句柄：131452 标题：
-句柄：262446 标题：Hidden Window
-句柄：131426 标题：CiceroUIWndFrame
-句柄：131444 标题：
-句柄：131420 标题：Hidden Window
-句柄：131140 标题：SystemResourceNotifyWindow
-句柄：196666 标题：MediaContextNotificationWindow
-句柄：131424 标题：
-句柄：131190 标题：##VSO###MCVSSHLD##
-句柄：197700 标题：
-句柄：918320 标题：
-句柄：132108 标题：Chrome Legacy Window
-句柄：67504 标题：Chrome Legacy Window
-句柄：67488 标题：Chrome Legacy Window
-句柄：67472 标题：Chrome Legacy Window
-句柄：67456 标题：Chrome Legacy Window
-句柄：67440 标题：Chrome Legacy Window
-句柄：67408 标题：Chrome Legacy Window
-句柄：67392 标题：Chrome Legacy Window
-句柄：67376 标题：Chrome Legacy Window
-句柄：67360 标题：Chrome Legacy Window
-句柄：330224 标题：Chrome Legacy Window
-句柄：131926 标题：Chrome Legacy Window
-句柄：394268 标题：Chrome Legacy Window
-句柄：67576 标题：
-句柄：67574 标题：SystemResourceNotifyWindow
-句柄：67572 标题：MediaContextNotificationWindow
-句柄：67570 标题：.NET-BroadcastEventWindow.4.0.0.0.1085a3f.0
-句柄：67564 标题：
-句柄：67558 标题：McPlatformSingleExeFramework
-句柄：67550 标题：GDI+ Window (OmenCommandCenterBackground.exe)
-句柄：67544 标题：CiceroUIWndFrame
-句柄：67538 标题：OMEN Background Process
-句柄：67536 标题：Hidden Window
-句柄：67534 标题：DDE Server Window
+句柄：67376 标题：
+句柄：67386 标题：
+句柄：131858 标题：
+句柄：328388 标题：
+句柄：132344 标题：
+句柄：67370 标题：
+句柄：197768 标题：Steam
 句柄：67532 标题：
-句柄：67530 标题：
-句柄：67522 标题：
-句柄：67508 标题：
-句柄：67492 标题：
-句柄：67476 标题：
-句柄：67460 标题：
-句柄：67444 标题：
-句柄：67428 标题：
-句柄：67412 标题：
-句柄：67396 标题：
-句柄：67380 标题：
-句柄：67364 标题：
-句柄：67348 标题：
-句柄：198186 标题：
-句柄：131430 标题：{30A1588D-127B-4CC0-BA47-B11825F07731}
-句柄：131428 标题：{03374DBB-D3AF-4A0B-AFC2-C2F5E0DB82A9}
-句柄：197842 标题：.NET-BroadcastEventWindow.4.0.0.0.21af1a5.0
-句柄：132772 标题：
-句柄：983980 标题：无标题
-句柄：131936 标题：
-句柄：67278 标题：
-句柄：67270 标题：.NET-BroadcastEventWindow.4.0.0.0.3ce0bb8.0
-句柄：132796 标题：
-句柄：132792 标题：
-句柄：67254 标题：
-句柄：67244 标题：
-句柄：132774 标题：
-句柄：132684 标题：
-句柄：67178 标题：
-句柄：67182 标题：
-句柄：67186 标题：
-句柄：67190 标题：
-句柄：67194 标题：
-句柄：67198 标题：
-句柄：67202 标题：
-句柄：67206 标题：
-句柄：67210 标题：
-句柄：67214 标题：
-句柄：67218 标题：
-句柄：67222 标题：
-句柄：67226 标题：
-句柄：67230 标题：
-句柄：67168 标题：
-句柄：67170 标题：
-句柄：67172 标题：
-句柄：67176 标题：
-句柄：67174 标题：
-句柄：67164 标题：向日葵
-句柄：67166 标题：
-句柄：132670 标题：
-句柄：67128 标题：GDI+ Window (OneDrive.exe)
-句柄：67124 标题：
-句柄：67120 标题：
-句柄：67110 标题：
-句柄：67106 标题：
-句柄：67096 标题：
-句柄：67098 标题：
-句柄：67094 标题：
-句柄：67088 标题：
-句柄：67082 标题：
-句柄：67076 标题：
-句柄：67070 标题：
-句柄：67064 标题：
-句柄：67060 标题：MbToolTip
-句柄：67058 标题：MbToolTip
-句柄：66950 标题：向日葵远程控制
-句柄：67056 标题：
-句柄：67062 标题：
-句柄：67044 标题：
-句柄：67050 标题：
-句柄：67052 标题：
-句柄：67048 标题：MbToolTip
-句柄：67046 标题：MbToolTip
-句柄：67028 标题：DDE Server Window
-句柄：67016 标题：
-句柄：67024 标题：DesktopWindowXamlSource
-句柄：67026 标题：
-句柄：67008 标题：DesktopWindowXamlSource
-句柄：67004 标题：
-句柄：66998 标题：
-句柄：66992 标题：
-句柄：66986 标题：系统设置
-句柄：67042 标题：
+句柄：67534 标题：
+句柄：67544 标题：
+句柄：131934 标题：
+句柄：131874 标题：
+句柄：131868 标题：
+句柄：67510 标题：
+句柄：67494 标题：
+句柄：67478 标题：
+句柄：67462 标题：
+句柄：67446 标题：
+句柄：67430 标题：
+句柄：67414 标题：
+句柄：67398 标题：
+句柄：67382 标题：
+句柄：132570 标题：
+句柄：131856 标题：
+句柄：132892 标题：
+句柄：263962 标题：
+句柄：198254 标题：无标题
+句柄：328456 标题：
+句柄：132212 标题：.NET-BroadcastEventWindow.4.0.0.0.21af1a5.0
+句柄：132882 标题：GDI+ Window (OneDrive.exe)
+句柄：67320 标题：
+句柄：67312 标题：.NET-BroadcastEventWindow.4.0.0.0.3ce0bb8.0
+句柄：132726 标题：
+句柄：67298 标题：
+句柄：67228 标题：
+句柄：67216 标题：
+句柄：67204 标题：
+句柄：67200 标题：
+句柄：263172 标题：SystemResourceNotifyWindow
+句柄：459722 标题：MediaContextNotificationWindow
+句柄：787436 标题：.NET-BroadcastEventWindow.4.0.0.0.1085a3f.0
+句柄：524748 标题：
+句柄：133092 标题：.NET-BroadcastEventWindow.4.0.0.0.293cd4a.0
+句柄：196978 标题：
+句柄：131416 标题：Hidden Window
+句柄：131380 标题：CiceroUIWndFrame
+句柄：131118 标题：
+句柄：131108 标题：Hidden Window
+句柄：196960 标题：SystemResourceNotifyWindow
+句柄：131114 标题：MediaContextNotificationWindow
+句柄：262506 标题：
+句柄：196646 标题：UxdService
+句柄：66992 标题：DDE Server Window
 句柄：66980 标题：
-句柄：66974 标题：
+句柄：66988 标题：DesktopWindowXamlSource
+句柄：66990 标题：
+句柄：66972 标题：DesktopWindowXamlSource
 句柄：66968 标题：
-句柄：66958 标题：
-句柄：66952 标题：
-句柄：66880 标题：OneDrive - 个人
-句柄：66876 标题：
-句柄：66874 标题：OffScreenTimer
-句柄：66866 标题：
-句柄：66856 标题：GDI+ Window (SunloginClient.exe)
-句柄：132382 标题：RealtekAudioBackgroundProcessClass
-句柄：132380 标题：
-句柄：197912 标题：SecurityHealthSystray
-句柄：66830 标题：NVIDIA GeForce Overlay DT
-句柄：132302 标题：
-句柄：66824 标题：NVIDIA GeForce Overlay
-句柄：66818 标题：
-句柄：66816 标题：
-句柄：66808 标题：
-句柄：132310 标题：NVIDIA NodeJS Share Window
-句柄：132298 标题：{1274D398-C3C8-422E-87DD-2FAFFD5A7F2F}
-句柄：132288 标题：{2A335767-FC94-417F-ABC4-B4122ADBEE60}
-句柄：197818 标题：{5AEA657D-F3F5-4BD8-BFE9-A4B537FA24C3}
-句柄：263128 标题：.NET-BroadcastEventWindow.4.0.0.0.1cbc665.0
-句柄：66744 标题：MediaContextNotificationWindow
-句柄：66584 标题：Windows 输入体验
-句柄：132110 标题：BroadcastListenerWindow
-句柄：197624 标题：BroadcastListenerWindow
-句柄：197622 标题：BroadcastListenerWindow
-句柄：131724 标题：BroadcastListenerWindow
-句柄：131768 标题：NvContainerWindowClass00004394
-句柄：197300 标题：NvContainerWindowClass0000436C
-句柄：66568 标题：
-句柄：66562 标题：SystemResourceNotifyWindow
-句柄：131692 标题：QTrayIconMessageWindow
-句柄：66450 标题：BluetoothNotificationAreaIconWindowClass
-句柄：131960 标题：MS_WebcheckMonitor
-句柄：66434 标题：
-句柄：197394 标题：
-句柄：131854 标题：DDE Server Window
-句柄：131850 标题：
-句柄：66282 标题：
-句柄：66288 标题：
-句柄：66296 标题：
-句柄：66182 标题：Windows Push Notifications Platform
-句柄：66158 标题：位置通知
-句柄：66088 标题：RealtekAudioAdminBackgroundProcessClass
-句柄：131616 标题：
-句柄：66096 标题：
-句柄：66114 标题：
-句柄：66120 标题：
-句柄：197276 标题：
+句柄：66962 标题：
+句柄：66956 标题：
+句柄：66900 标题：OneDrive - 个人
+句柄：66894 标题：
+句柄：132406 标题：.NET-BroadcastEventWindow.4.0.0.0.1cbc665.0
+句柄：66860 标题：MediaContextNotificationWindow
+句柄：66856 标题：NVIDIA GeForce Overlay DT
+句柄：66858 标题：
+句柄：66850 标题：NVIDIA GeForce Overlay
+句柄：66844 标题：
+句柄：66842 标题：
+句柄：66836 标题：
+句柄：66828 标题：NVIDIA NodeJS Share Window
+句柄：132360 标题：{1274D398-C3C8-422E-87DD-2FAFFD5A7F2F}
+句柄：66820 标题：{2A335767-FC94-417F-ABC4-B4122ADBEE60}
+句柄：66816 标题：RealtekAudioBackgroundProcessClass
+句柄：197884 标题：
+句柄：394306 标题：SecurityHealthSystray
+句柄：66800 标题：{5AEA657D-F3F5-4BD8-BFE9-A4B537FA24C3}
+句柄：132008 标题：Windows 输入体验
+句柄：132228 标题：.NET-BroadcastEventWindow.3b95145.0
+句柄：132136 标题：
+句柄：197690 标题：SystemResourceNotifyWindow
+句柄：132160 标题：QTrayIconMessageWindow
+句柄：66464 标题：BluetoothNotificationAreaIconWindowClass
+句柄：262882 标题：
+句柄：262856 标题：MS_WebcheckMonitor
+句柄：525134 标题：
+句柄：66366 标题：
+句柄：66372 标题：
+句柄：131916 标题：
+句柄：131880 标题：
+句柄：66346 标题：DDE Server Window
+句柄：66186 标题：位置通知
+句柄：328184 标题：NvSvc
+句柄：66166 标题：BroadcastListenerWindow
+句柄：66154 标题：RealtekAudioAdminBackgroundProcessClass
+句柄：66138 标题：Windows Push Notifications Platform
+句柄：262686 标题：
+句柄：66098 标题：
+句柄：66116 标题：
 句柄：66122 标题：
-句柄：66094 标题：
-句柄：66074 标题：
-句柄：66072 标题：
-句柄：66068 标题：
+句柄：197304 标题：
+句柄：66126 标题：
+句柄：66096 标题：
+句柄：66084 标题：
+句柄：66082 标题：
+句柄：131572 标题：
+句柄：131582 标题：
+句柄：199142 标题：DesktopWindowXamlSource
 句柄：66066 标题：
-句柄：133558 标题：DesktopWindowXamlSource
+句柄：66062 标题：
+句柄：66056 标题：
 句柄：66054 标题：
-句柄：66048 标题：
-句柄：66032 标题：
-句柄：66028 标题：
-句柄：66000 标题：
-句柄：65998 标题：
-句柄：65922 标题：
-句柄：65918 标题：
-句柄：65874 标题：RxDiag Message Pump 3.1 Mar 10 2023 08:28:10
-句柄：65858 标题：
-句柄：65862 标题：The Event Manager Dashboard
-句柄：65866 标题：OK
-句柄：65868 标题：Activity Information
-句柄：65872 标题：Cancel
-句柄：65876 标题：
-句柄：65802 标题：Task Host Window
-句柄：65796 标题：SangforUDProtectExe
-句柄：131108 标题：ETDCtrl
-句柄：65648 标题：NvContainerWindowClass000015BC
-句柄：131146 标题：DWM Notification Window
-句柄：131678 标题：
-句柄：67614 标题：小组件
-句柄：67640 标题：
-句柄：67630 标题：
-句柄：68098 标题：
-句柄：199166 标题：好友列表
-句柄：199136 标题：
-句柄：133628 标题：
-句柄：68102 标题：
-句柄：66006 标题：Program Manager
-句柄：66010 标题：
-句柄：66012 标题：FolderView
+句柄：66018 标题：
 句柄：66016 标题：
-句柄：264716 标题：MSCTFIME UI
-句柄：66138 标题：Default IME
-句柄：133582 标题：MSCTFIME UI
-句柄：66050 标题：Default IME
-句柄：66422 标题：Default IME
-句柄：131422 标题：MSCTFIME UI
-句柄：131136 标题：Default IME
-句柄：66966 标题：MSCTFIME UI
-句柄：66868 标题：Default IME
-句柄：65792 标题：MSCTFIME UI
-句柄：131106 标题：Default IME
-句柄：131200 标题：MSCTFIME UI
-句柄：656298 标题：Default IME
-句柄：68184 标题：MSCTFIME UI
-句柄：526918 标题：Default IME
-句柄：723094 标题：Default IME
-句柄：1051030 标题：MSCTFIME UI
-句柄：1048706 标题：Default IME
-句柄：854158 标题：Default IME
-句柄：460962 标题：Default IME
-句柄：526916 标题：Default IME
-句柄：657816 标题：Default IME
-句柄：1444334 标题：Default IME
-句柄：395616 标题：Default IME
-句柄：131170 标题：MSCTFIME UI
-句柄：67112 标题：Default IME
-句柄：262872 标题：MSCTFIME UI
-句柄：67246 标题：Default IME
-句柄：461224 标题：MSCTFIME UI
-句柄：264448 标题：Default IME
-句柄：68024 标题：Default IME
-句柄：67898 标题：Default IME
-句柄：787734 标题：Default IME
-句柄：131680 标题：Default IME
-句柄：394712 标题：Default IME
-句柄：131178 标题：Default IME
-句柄：198106 标题：MSCTFIME UI
-句柄：131804 标题：Default IME
-句柄：67848 标题：Default IME
-句柄：67832 标题：Default IME
-句柄：67822 标题：Default IME
-句柄：133332 标题：Default IME
-句柄：133340 标题：Default IME
-句柄：395326 标题：Default IME
-句柄：67702 标题：Default IME
-句柄：67692 标题：Default IME
-句柄：67688 标题：Default IME
-句柄：131896 标题：Default IME
-句柄：67660 标题：Default IME
-句柄：67638 标题：Default IME
+句柄：65940 标题：##VSO###MCVSSHLD##
+句柄：65920 标题：BroadcastListenerWindow
+句柄：65914 标题：BroadcastListenerWindow
+句柄：131446 标题：BroadcastListenerWindow
+句柄：65864 标题：
+句柄：65860 标题：
+句柄：65854 标题：
+句柄：131356 标题：McPlatformSingleExeFramework
+句柄：65826 标题：NvContainerWindowClass000022DC
+句柄：65816 标题：NvContainerWindowClass000030C0
+句柄：65812 标题：The Event Manager Dashboard
+句柄：65824 标题：OK
+句柄：65828 标题：Activity Information
+句柄：65830 标题：Cancel
+句柄：65832 标题：
+句柄：65808 标题：Task Host Window
+句柄：65756 标题：SangforUDProtectExe
+句柄：131098 标题：ETDCtrl
+句柄：65634 标题：NvContainerWindowClass00003BAC
+句柄：65576 标题：DWM Notification Window
+句柄：197540 标题：
+句柄：67688 标题：小组件
+句柄：67744 标题：
+句柄：67732 标题：
+句柄：198094 标题：Clash for Windows
+句柄：918214 标题：Contests - Codeforces 和另外 3 个页面 - 个人 - Microsoft​ Edge
+句柄：1049252 标题：Chrome Legacy Window
+句柄：198096 标题：
+句柄：263646 标题：
+句柄：1575356 标题：进度
+句柄：10881330 标题：
+句柄：788722 标题：
+句柄：264700 标题：
+句柄：788028 标题：
+句柄：853568 标题：
+句柄：524944 标题：
+句柄：854402 标题：
+句柄：461392 标题：设置
+句柄：723394 标题：设置
+句柄：3541450 标题：
+句柄：657516 标题：
+句柄：919094 标题：
+句柄：2427126 标题：123 – main.py Administrator
+句柄：2164192 标题：LetsView
+句柄：329434 标题：DesktopWindowXamlSource
+句柄：66024 标题：Program Manager
+句柄：66028 标题：
+句柄：66034 标题：FolderView
+句柄：66048 标题：
+句柄：68110 标题：MSCTFIME UI
+句柄：66148 标题：Default IME
+句柄：199160 标题：MSCTFIME UI
+句柄：66064 标题：Default IME
+句柄：66014 标题：MSCTFIME UI
+句柄：65938 标题：Default IME
+句柄：66442 标题：Default IME
+句柄：198074 标题：MSCTFIME UI
+句柄：132158 标题：Default IME
+句柄：131418 标题：MSCTFIME UI
+句柄：196968 标题：Default IME
+句柄：65804 标题：MSCTFIME UI
+句柄：131096 标题：Default IME
+句柄：526546 标题：MSCTFIME UI
+句柄：133732 标题：Default IME
+句柄：722500 标题：MSCTFIME UI
+句柄：460510 标题：Default IME
+句柄：1311426 标题：Default IME
+句柄：985392 标题：Default IME
+句柄：722596 标题：Default IME
+句柄：68136 标题：Default IME
+句柄：985406 标题：Default IME
+句柄：1246908 标题：Default IME
+句柄：198682 标题：
+句柄：461090 标题：Default IME
+句柄：132746 标题：MSCTFIME UI
+句柄：65934 标题：Default IME
+句柄：722406 标题：MSCTFIME UI
+句柄：787478 标题：Default IME
+句柄：394096 标题：Default IME
+句柄：133528 标题：Default IME
+句柄：460008 标题：Default IME
+句柄：67998 标题：Default IME
+句柄：67986 标题：Default IME
+句柄：67984 标题：Default IME
+句柄：67816 标题：Default IME
+句柄：67742 标题：Default IME
+句柄：67728 标题：Default IME
+句柄：67586 标题：Default IME
+句柄：67644 标题：Default IME
 句柄：67628 标题：Default IME
-句柄：67594 标题：Default IME
-句柄：67590 标题：Default IME
-句柄：132048 标题：Default IME
-句柄：196722 标题：Default IME
-句柄：262448 标题：
-句柄：197142 标题：Default IME
-句柄：1311676 标题：Default IME
-句柄：67566 标题：Default IME
-句柄：67560 标题：Default IME
-句柄：67552 标题：Default IME
-句柄：67548 标题：
-句柄：67542 标题：MSCTFIME UI
-句柄：66564 标题：Default IME
-句柄：67524 标题：Default IME
-句柄：67510 标题：Default IME
-句柄：67494 标题：Default IME
-句柄：67478 标题：Default IME
-句柄：67462 标题：Default IME
-句柄：67446 标题：Default IME
-句柄：67430 标题：Default IME
-句柄：67414 标题：Default IME
-句柄：67398 标题：Default IME
-句柄：67382 标题：Default IME
-句柄：67366 标题：Default IME
-句柄：67350 标题：Default IME
-句柄：328662 标题：Default IME
-句柄：132276 标题：Default IME
-句柄：131434 标题：Default IME
-句柄：1115878 标题：Default IME
-句柄：263098 标题：Default IME
-句柄：67280 标题：Default IME
-句柄：67272 标题：Default IME
-句柄：67258 标题：Default IME
-句柄：67240 标题：Default IME
-句柄：67234 标题：Default IME
-句柄：67130 标题：Default IME
-句柄：67108 标题：Default IME
-句柄：66878 标题：Default IME
-句柄：67022 标题：MSCTFIME UI
-句柄：67006 标题：Default IME
-句柄：67000 标题：Default IME
-句柄：66994 标题：Default IME
-句柄：66858 标题：Default IME
-句柄：66850 标题：Default IME
-句柄：132378 标题：Default IME
-句柄：66828 标题：MSCTFIME UI
-句柄：66810 标题：Default IME
-句柄：66798 标题：Default IME
-句柄：66768 标题：Default IME
-句柄：132290 标题：Default IME
-句柄：66748 标题：Default IME
-句柄：66586 标题：Default IME
-句柄：132112 标题：Default IME
-句柄：197626 标题：Default IME
-句柄：197630 标题：Default IME
-句柄：197616 标题：Default IME
-句柄：131770 标题：Default IME
-句柄：131766 标题：Default IME
-句柄：197614 标题：Default IME
-句柄：66436 标题：Default IME
-句柄：197392 标题：Default IME
-句柄：197350 标题：Default IME
-句柄：66284 标题：Default IME
-句柄：66184 标题：Default IME
-句柄：66162 标题：Default IME
-句柄：66090 标题：Default IME
-句柄：66002 标题：Default IME
-句柄：65974 标题：MSCTFIME UI
-句柄：65864 标题：Default IME
-句柄：65860 标题：Default IME
-句柄：65798 标题：Default IME
-句柄：66052 标题：MSCTFIME UI
-句柄：65920 标题：Default IME
-句柄：68100 标题：Default IME
+句柄：393574 标题：Default IME
+句柄：198194 标题：Default IME
+句柄：198184 标题：Default IME
+句柄：132624 标题：Default IME
+句柄：721370 标题：Default IME
+句柄：133100 标题：Default IME
+句柄：133104 标题：Default IME
+句柄：67572 标题：Default IME
+句柄：67554 标题：
+句柄：328652 标题：MSCTFIME UI
+句柄：132130 标题：Default IME
+句柄：67542 标题：Default IME
+句柄：67528 标题：Default IME
+句柄：67368 标题：MSCTFIME UI
+句柄：67218 标题：Default IME
+句柄：67512 标题：Default IME
+句柄：67496 标题：Default IME
+句柄：67480 标题：Default IME
+句柄：67464 标题：Default IME
+句柄：67448 标题：Default IME
+句柄：67432 标题：Default IME
+句柄：67416 标题：Default IME
+句柄：67400 标题：Default IME
+句柄：67384 标题：Default IME
+句柄：132326 标题：Default IME
+句柄：131854 标题：Default IME
+句柄：131862 标题：Default IME
+句柄：132214 标题：Default IME
+句柄：132870 标题：Default IME
+句柄：67322 标题：Default IME
+句柄：67314 标题：Default IME
+句柄：67300 标题：Default IME
+句柄：67206 标题：Default IME
+句柄：67202 标题：Default IME
+句柄：263122 标题：Default IME
+句柄：131428 标题：Default IME
+句柄：131414 标题：
+句柄：66896 标题：Default IME
+句柄：66986 标题：MSCTFIME UI
+句柄：66970 标题：Default IME
+句柄：66964 标题：Default IME
+句柄：66958 标题：Default IME
+句柄：66854 标题：MSCTFIME UI
+句柄：66838 标题：Default IME
+句柄：66830 标题：Default IME
+句柄：132362 标题：Default IME
+句柄：66822 标题：Default IME
+句柄：66818 标题：Default IME
+句柄：132350 标题：Default IME
+句柄：66802 标题：Default IME
+句柄：132012 标题：Default IME
+句柄：66694 标题：Default IME
+句柄：131988 标题：Default IME
+句柄：66448 标题：Default IME
+句柄：66368 标题：Default IME
+句柄：66354 标题：Default IME
+句柄：66188 标题：Default IME
+句柄：66168 标题：Default IME
+句柄：66158 标题：Default IME
+句柄：66140 标题：Default IME
+句柄：66020 标题：Default IME
+句柄：65942 标题：Default IME
+句柄：65928 标题：MSCTFIME UI
+句柄：65922 标题：Default IME
+句柄：65916 标题：Default IME
+句柄：65912 标题：Default IME
+句柄：65856 标题：Default IME
+句柄：262874 标题：MSCTFIME UI
+句柄：65836 标题：Default IME
+句柄：65834 标题：Default IME
+句柄：65818 标题：Default IME
+句柄：65814 标题：Default IME
+句柄：65776 标题：Default IME
+句柄：329290 标题：MSCTFIME UI
+句柄：459744 标题：Default IME
+句柄：131812 标题：MSCTFIME UI
+句柄：132696 标题：Default IME
+句柄：199086 标题：Default IME
+句柄：788822 标题：MSCTFIME UI
+句柄：854190 标题：Default IME
+句柄：199110 标题：Default IME
+句柄：1050948 标题：Default IME
+句柄：133742 标题：Default IME
+句柄：461082 标题：MSCTFIME UI
+句柄：66060 标题：MSCTFIME UI
+句柄：65862 标题：Default IME

@@ -13,7 +13,7 @@ import matplotlib.image as mpimg
 # 窗体标题  用于定位游戏窗体
 
 DEBUG = True
-WINDOW_TITLE = "连连看"
+WINDOW_TITLE = "LetsView[屏幕镜像]"
 # 时间间隔随机生成 [MIN,MAX]
 TIME_INTERVAL_MAX = 0.6
 TIME_INTERVAL_MIN = 1
@@ -38,8 +38,8 @@ SUB_RB_X = 32
 SUB_RB_Y = 32
 # 游戏的最多消除次数
 MAX_ROUND = 10000
-WINDOW_X = 418
-WINDOW_Y = 182
+WINDOW_X = 1000
+WINDOW_Y = 100
 
 
 def debug_init():
@@ -118,7 +118,7 @@ def getScreenImage():
     scim.save('screen.png')
     # 用opencv读取屏幕截图
     # 获取ndarray
-    return cv2.imread("screen.png")
+    return cv2.imread("screen.png")[:,:,::-1]
 
 
 def get_empty_square():
@@ -149,8 +149,8 @@ def getAllSquare(screen_image, game_pos):
                      game_x + x * POINT_WIDTH:game_x + (x + 1) * POINT_WIDTH]
             all_square.append(square)
     if DEBUG:
-        # show_all(all_square)
-        pass
+        show_all(all_square)
+        # pass
     # 因为有些图片的边缘会造成干扰，所以统一把图片往内缩小一圈
     # 对所有的方块进行处理 ，去掉边缘一圈后返回
     finalresult = []

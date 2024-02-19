@@ -15,8 +15,8 @@ import matplotlib.image as mpimg
 import main
 from main import getAllSquare, getAllSquareTypes, getAllSquareRecord, canConnect
 
-DEBUG = True
-WINDOW_TITLE = "连连看"
+DEBUG = False
+WINDOW_TITLE = "LetsView[屏幕镜像]"
 # 时间间隔随机生成 [MIN,MAX]
 TIME_INTERVAL_MAX = 0.6
 TIME_INTERVAL_MIN = 1
@@ -41,8 +41,8 @@ SUB_RB_X = 32
 SUB_RB_Y = 32
 # 游戏的最多消除次数
 MAX_ROUND = 10000
-WINDOW_X = 418
-WINDOW_Y = 182
+WINDOW_X = 1000
+WINDOW_Y = 100
 
 
 def debug_init():
@@ -231,21 +231,21 @@ if __name__ == '__main__':
     # i. 定位游戏窗体
     game_pos = main.getGameWindow()
     hinter.game_pos = game_pos
-    time.sleep(1)
-    # ii. 获取屏幕截图
+    # time.sleep(1)
+    # # ii. 获取屏幕截图
     screen_image = main.getScreenImage()
-    # screen_image = cv2.imread("screen.png")  # TODO
-    # iii. 对截图切片，形成一张二维地图
+    # # screen_image = cv2.imread("screen.png")  # TODO
+    # # iii. 对截图切片，形成一张二维地图
     all_square_list = getAllSquare(screen_image, game_pos)
-    # iii-2 创建窗体并绘制图像
-    hinter.draw_square(all_square_list, H_NUM, V_NUM)
-    print(POINT_WIDTH)
-    # iv. 获取所有类型的图形，并编号
-    types = getAllSquareTypes(all_square_list)
-    # print(type(types))
-    # v. 讲获取的图片地图转换成数字矩阵
-    result = np.transpose(getAllSquareRecord(all_square_list, types))
-    # vi. 执行消除 , 并输出消除数量
-    # print('The total elimination amount is ' + str(autoRemove(result, game_pos)))
-    autoHint(result)
+    # # iii-2 创建窗体并绘制图像
+    # hinter.draw_square(all_square_list, H_NUM, V_NUM)
+    # print(POINT_WIDTH)
+    # # iv. 获取所有类型的图形，并编号
+    # types = getAllSquareTypes(all_square_list)
+    # # print(type(types))
+    # # v. 讲获取的图片地图转换成数字矩阵
+    # result = np.transpose(getAllSquareRecord(all_square_list, types))
+    # # vi. 执行消除 , 并输出消除数量
+    # # print('The total elimination amount is ' + str(autoRemove(result, game_pos)))
+    # autoHint(result)
     root.mainloop()
