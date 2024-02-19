@@ -18,17 +18,17 @@ WINDOW_TITLE = "LetsView[屏幕镜像]"
 TIME_INTERVAL_MAX = 0.6
 TIME_INTERVAL_MIN = 1
 # 游戏区域距离顶点的x偏移
-MARGIN_LEFT = 195
+MARGIN_LEFT = 279
 # 游戏区域距离顶点的y偏移
-MARGIN_HEIGHT = 120
+MARGIN_HEIGHT = 317
 # 横向的方块数量
-H_NUM = 10
+H_NUM = 7
 # 纵向的方块数量
 V_NUM = 10
 # 方块宽度
-POINT_WIDTH = 40
+POINT_WIDTH = 48
 # 方块高度
-POINT_HEIGHT = 40
+POINT_HEIGHT = 47
 # 空图像编号
 EMPTY_ID = 0
 # 切片处理时候的左上、右下坐标：
@@ -118,7 +118,7 @@ def getScreenImage():
     scim.save('screen.png')
     # 用opencv读取屏幕截图
     # 获取ndarray
-    return cv2.imread("screen.png")[:,:,::-1]
+    return cv2.imread("screen.png")[:, :, ::-1]
 
 
 def get_empty_square():
@@ -445,4 +445,3 @@ if __name__ == '__main__':
     result = np.transpose(getAllSquareRecord(all_square_list, types))
     # vi. 执行消除 , 并输出消除数量
     print('The total elimination amount is ' + str(autoRemove(result, game_pos)))
-

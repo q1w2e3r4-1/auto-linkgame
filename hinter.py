@@ -13,25 +13,25 @@ import matplotlib.image as mpimg
 
 # 窗体标题  用于定位游戏窗体
 import main
-from main import getAllSquare, getAllSquareTypes, getAllSquareRecord, canConnect
+from main import getAllSquareTypes, getAllSquareRecord, canConnect
 
-DEBUG = False
+DEBUG = False # 如果玩的是自带的游戏，设为True,反之设为false
 WINDOW_TITLE = "LetsView[屏幕镜像]"
 # 时间间隔随机生成 [MIN,MAX]
 TIME_INTERVAL_MAX = 0.6
 TIME_INTERVAL_MIN = 1
 # 游戏区域距离顶点的x偏移
-MARGIN_LEFT = 195
+MARGIN_LEFT = 279
 # 游戏区域距离顶点的y偏移
-MARGIN_HEIGHT = 120
+MARGIN_HEIGHT = 317
 # 横向的方块数量
-H_NUM = 10
+H_NUM = 7
 # 纵向的方块数量
 V_NUM = 10
 # 方块宽度
-POINT_WIDTH = 40
+POINT_WIDTH = 48
 # 方块高度
-POINT_HEIGHT = 40
+POINT_HEIGHT = 47
 # 空图像编号
 EMPTY_ID = 0
 # 切片处理时候的左上、右下坐标：
@@ -77,6 +77,44 @@ def debug_init():
     WINDOW_Y = 182
     main.debug_init()
 
+def getAllSquare(screen_image, game_pos):
+    print('Processing pictures...')
+    # 通过游戏窗体定位
+    # 加上偏移量获取游戏区域
+    game_x = game_pos[0] + MARGIN_LEFT
+    game_y = game_pos[1] + MARGIN_HEIGHT
+    print(game_pos)
+    # 从游戏区域左上开始
+    # 把图像按照具体大小切割成相同的小块
+    # 切割标准是按照小块的横纵坐标
+    # plt.imshow(screen_image)
+    # plt.show()
+    all_square = []
+
+    for x in range(0, H_NUM):
+        for y in range(0, V_NUM):
+            # ndarray的切片方法 ： [纵坐标起始位置：纵坐标结束为止，横坐标起始位置：横坐标结束位置]
+            square = screen_image[game_y + y * POINT_HEIGHT - y // 2:game_y + (y + 1) * POINT_HEIGHT - y // 2,
+                     game_x + x * POINT_WIDTH + x // 2:game_x + (x + 1) * POINT_WIDTH + x // 2]
+            all_square.append(square)
+    if True: # TODO
+        main.show_all(all_square)
+        # pass
+    # 因为有些图片的边缘会造成干扰，所以统一把图片往内缩小一圈
+    # 对所有的方块进行处理 ，去掉边缘一圈后返回
+    finalresult = []
+    # idx = 1
+    for square in all_square:
+        s = square[SUB_LT_Y:SUB_RB_Y, SUB_LT_X:SUB_RB_X]
+        finalresult.append(s)
+        # if idx == 1:
+        #     plt.figure(figsize=(5, 5))
+        #     plt.imshow(np.array(s))
+        #     plt.xticks([]), plt.yticks([])
+        #     plt.savefig("empty.png", bbox_inches="tight", pad_inches=-0.1, dpi=13.7)
+        #     plt.show()
+        #     idx = 2
+    return finalresult
 
 class MainWindow:
     __Title = "Hinter"
@@ -208,7 +246,6 @@ def hint_one(result, prior):
                                 return True
     return False
 
-
 def autoHint(squares):
     cnt = 0
     # 重复一次消除直到到达最多消除次数
@@ -229,12 +266,13 @@ if __name__ == '__main__':
     hinter = MainWindow()
 
     # i. 定位游戏窗体
-    game_pos = main.getGameWindow()
+    # game_pos = main.getGameWindow()
+    game_pos = (WINDOW_X, WINDOW_Y)
     hinter.game_pos = game_pos
     # time.sleep(1)
     # # ii. 获取屏幕截图
-    screen_image = main.getScreenImage()
-    # # screen_image = cv2.imread("screen.png")  # TODO
+    # screen_image = getScreenImage()
+    screen_image = cv2.imread("screen.png")[:, :, ::-1]  # TODO
     # # iii. 对截图切片，形成一张二维地图
     all_square_list = getAllSquare(screen_image, game_pos)
     # # iii-2 创建窗体并绘制图像
