@@ -21,7 +21,7 @@ WINDOW_TITLE = "LetsView[屏幕镜像]"
 TIME_INTERVAL_MAX = 0.6
 TIME_INTERVAL_MIN = 1
 # 游戏区域距离顶点的x偏移
-MARGIN_LEFT = 390 # 410
+MARGIN_LEFT = 400 # 410
 # 游戏区域距离顶点的y偏移
 MARGIN_HEIGHT = 263 # 303
 # 横向的方块数量
@@ -29,16 +29,17 @@ H_NUM = 7
 # 纵向的方块数量
 V_NUM = 10
 # 方块宽度
-POINT_WIDTH = 55
+POINT_WIDTH = 53
 # 方块高度
 POINT_HEIGHT = 53
 # 空图像编号
 EMPTY_ID = 0
+BLOCK_ID = 5
 # 切片处理时候的左上、右下坐标：
 SUB_LT_X = 8
 SUB_LT_Y = 8
-SUB_RB_X = 40
-SUB_RB_Y = 40
+SUB_RB_X = 42
+SUB_RB_Y = 42
 # 游戏的最多消除次数
 MAX_ROUND = 10000
 WINDOW_X = 900
@@ -94,12 +95,17 @@ def getAllSquare(screen_image, game_pos):
     for x in range(0, H_NUM):
         for y in range(0, V_NUM):
             # ndarray的切片方法 ： [纵坐标起始位置：纵坐标结束为止，横坐标起始位置：横坐标结束位置]
-            square = screen_image[game_y + y * POINT_HEIGHT:game_y + (y + 1) * POINT_HEIGHT,
-                     game_x + x * POINT_WIDTH:game_x + (x + 1) * POINT_WIDTH]
+            square = screen_image[game_y + y * POINT_HEIGHT + y // 5:game_y + (y + 1) * POINT_HEIGHT + y // 5,
+                     game_x + x * POINT_WIDTH - (x+1) // 3:game_x + (x + 1) * POINT_WIDTH - (x+1) // 3]
             all_square.append(square)
     if True: # TODO
         main.show_all(all_square)
-        # pass
+        pass
+    # plt.figure(figsize=(5, 5))
+    # plt.imshow(np.array(all_square[25]))
+    # plt.xticks([]), plt.yticks([])
+    # plt.savefig("block.png", bbox_inches="tight", pad_inches=-0.1, dpi=13.6)
+    # plt.show()
     # 因为有些图片的边缘会造成干扰，所以统一把图片往内缩小一圈
     # 对所有的方块进行处理 ，去掉边缘一圈后返回
     finalresult = []
@@ -177,8 +183,8 @@ class MainWindow:
                 self.canvas.create_image(self.pos(i, j), image=self.photos[i][j], anchor='nw', tags='im%d%d' % (i, j))
 
     def hint(self, i, j, m, n, prior):
-        p1 = self.pos(i, j) + (15, 15)
-        p2 = self.pos(m, n) + (15, 15)
+        p1 = self.pos(i, j)
+        p2 = self.pos(m, n)
         self.canvas.create_oval(p1[0], p1[1], p1[0] + 25, p1[1] + 25, fill=self.colors[prior])
         self.canvas.create_oval(p2[0], p2[1], p2[0] + 25, p2[1] + 25, fill=self.colors[prior])
 
@@ -189,7 +195,7 @@ class MainWindow:
         # iii. 对截图切片，形成一张二维地图
         all_square_list = getAllSquare(screen_image, game_pos)
         # iii-2 创建窗体并绘制图像
-        hinter.draw_square(all_square_list, H_NUM, V_NUM)
+        hinter.draw_square(all_square_list, V_NUM, H_NUM)
         print(POINT_WIDTH)
         # iv. 获取所有类型的图形，并编号
         types = getAllSquareTypes(all_square_list)
@@ -207,11 +213,11 @@ def hint_one(result, prior):
     for i in range(0, len(result)):
         for j in range(0, len(result[0])):
             # 当前位置非空
-            if result[i][j] != EMPTY_ID:
+            if result[i][j] != EMPTY_ID and result[i][j] > BLOCK_ID:
                 # 再次遍历地图 寻找另一个满足条件的图片
                 for m in range(0, len(result)):
                     for n in range(0, len(result[0])):
-                        if result[m][n] != EMPTY_ID:
+                        if result[m][n] != EMPTY_ID and result[i][j] > BLOCK_ID:
                             # 若可以执行消除
                             if canConnect(i, j, m, n, result):
                                 # 消除的两个位置设置为空
@@ -272,8 +278,8 @@ if __name__ == '__main__':
     hinter.game_pos = game_pos
     # time.sleep(1)
     # # ii. 获取屏幕截图
-    screen_image = main.getScreenImage()
-    # screen_image = cv2.imread("screen.png")[:, :, ::-1]  # TODO
+    # screen_image = main.getScreenImage()
+    screen_image = cv2.imread("screenshot/screen9.png")[:, :, ::-1]  # TODO
     # # # iii. 对截图切片，形成一张二维地图
     all_square_list = getAllSquare(screen_image, game_pos)
     # # iii-2 创建窗体并绘制图像

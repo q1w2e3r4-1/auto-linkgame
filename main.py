@@ -18,24 +18,24 @@ WINDOW_TITLE = "AnLink"
 TIME_INTERVAL_MAX = 0.6
 TIME_INTERVAL_MIN = 1
 # 游戏区域距离顶点的x偏移
-MARGIN_LEFT = 159
+MARGIN_LEFT = 398 # 410
 # 游戏区域距离顶点的y偏移
-MARGIN_HEIGHT = 275
+MARGIN_HEIGHT = 263 # 303
 # 横向的方块数量
 H_NUM = 7
 # 纵向的方块数量
 V_NUM = 10
 # 方块宽度
-POINT_WIDTH = 50
+POINT_WIDTH = 53
 # 方块高度
-POINT_HEIGHT = 50
+POINT_HEIGHT = 53
 # 空图像编号
 EMPTY_ID = 0
 # 切片处理时候的左上、右下坐标：
 SUB_LT_X = 8
 SUB_LT_Y = 8
-SUB_RB_X = 40
-SUB_RB_Y = 40
+SUB_RB_X = 42
+SUB_RB_Y = 42
 # 游戏的最多消除次数
 MAX_ROUND = 10000
 WINDOW_X = 900
@@ -90,7 +90,7 @@ def getGameWindow():
     pos = win32gui.GetWindowRect(window)
     width = pos[2] - pos[0]
     height = pos[3] - pos[1]
-    win32gui.SetWindowPos(window, win32con.HWND_TOPMOST, WINDOW_X, WINDOW_Y, width, height, win32con.SWP_NOSIZE)
+    # win32gui.SetWindowPos(window, win32con.HWND_TOPMOST, WINDOW_X, WINDOW_Y, width, height, win32con.SWP_NOSIZE)
     print("Game windows at " + str((WINDOW_X, WINDOW_Y)))
     print("size :", width, height)
     return (WINDOW_X, WINDOW_Y)
@@ -122,11 +122,28 @@ def getScreenImage():
 
 
 def get_empty_square():
-    image = cv2.imread("empty.png")[:, :, ::-1]
-    # plt.imshow(image)
-    # plt.show()
-    return image[SUB_LT_Y:SUB_RB_Y, SUB_LT_X:SUB_RB_X]
+    content = np.load('empty.npy')
+    return content
 
+def get_block():
+    content = np.load('block.npy')
+    return content
+
+def get_block2():
+    content = np.load('block2.npy')
+    return content
+
+def get_block3():
+    content = np.load('block3.npy')
+    return content
+
+def get_block4():
+    content = np.load('block4.npy')
+    return content
+
+def get_block5():
+    content = np.load('block5.npy')
+    return content
 
 def getAllSquare(screen_image, game_pos):
     print('Processing pictures...')
@@ -172,9 +189,9 @@ def getAllSquare(screen_image, game_pos):
 # 存在返回进行判断图片所在的id
 # 否则返回-1
 def same_image(img1, img2):
-    b = cv2.subtract(img1, img2)
+    b = abs(img1.astype("int32") - img2.astype("int32"))
     # 若标准差全为0 即两张图片没有区别
-    return np.all(b < 70)
+    return np.percentile(b, 80) < 18
 
 
 def isImageExist(img, img_list):
@@ -194,7 +211,30 @@ def getAllSquareTypes(all_square):
     # 当前出现次数最多的方块
     # 这里我们默认出现最多的方块应该是空白块
     types.append(get_empty_square())
+    types.append(get_block())
+    types.append(get_block2())
+    types.append(get_block3())
+    types.append(get_block4())
+    types.append(get_block5())
     # nowid = 0
+
+    # t = cv2.subtract(types[0], all_square[57])
+    # plt.imshow(all_square[60])
+    # plt.show()
+    # plt.subplot(1,3,1)
+    # plt.imshow(all_square[11])
+    # plt.subplot(1,3,2)
+    # plt.imshow(all_square[17])
+    #
+    # plt.subplot(1, 3, 3)
+    # plt.imshow(types[1])
+    # np.save("block5", all_square[62])
+    # plt.show()
+    # # np.save("block3",all_square[17])
+    # t = abs(all_square[6].astype("int32") - all_square[68].astype("int32"))
+    # print( np.percentile(t, 80))
+    # plt.imshow(t)
+    # plt.show()
     for square in all_square:
         nid = isImageExist(square, types)
         # 如果这个图像不存在则插入列表
