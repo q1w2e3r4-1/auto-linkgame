@@ -18,8 +18,8 @@ from main import getAllSquareTypes, getAllSquareRecord, canConnect
 DEBUG = False # 如果玩的是自带的游戏，设为True,反之设为false
 WINDOW_TITLE = "LetsView[屏幕镜像]"
 # 时间间隔随机生成 [MIN,MAX]
-TIME_INTERVAL_MAX = 0.6
-TIME_INTERVAL_MIN = 1
+TIME_INTERVAL_MAX = 0.1
+TIME_INTERVAL_MIN = 0.15
 # 游戏区域距离顶点的x偏移
 MARGIN_LEFT = 400 # 410
 # 游戏区域距离顶点的y偏移
@@ -36,15 +36,17 @@ POINT_HEIGHT = 53
 EMPTY_ID = 0
 BLOCK_ID = 5
 # 切片处理时候的左上、右下坐标：
-SUB_LT_X = 8
-SUB_LT_Y = 8
-SUB_RB_X = 42
-SUB_RB_Y = 42
+SUB_LT_X = 10
+SUB_LT_Y = 12
+SUB_RB_X = 44
+SUB_RB_Y = 46
 # 游戏的最多消除次数
 MAX_ROUND = 10000
 WINDOW_X = 900
 WINDOW_Y = 50
 
+GAME_X = 1290
+GAME_Y = 315
 
 def debug_init():
     global WINDOW_TITLE, TIME_INTERVAL_MAX, TIME_INTERVAL_MIN, MARGIN_LEFT, MARGIN_HEIGHT, H_NUM, V_NUM, \
@@ -95,12 +97,14 @@ def getAllSquare(screen_image, game_pos):
     for x in range(0, H_NUM):
         for y in range(0, V_NUM):
             # ndarray的切片方法 ： [纵坐标起始位置：纵坐标结束为止，横坐标起始位置：横坐标结束位置]
-            square = screen_image[game_y + y * POINT_HEIGHT + y // 5:game_y + (y + 1) * POINT_HEIGHT + y // 5,
+            square = screen_image[game_y + y * POINT_HEIGHT :game_y + (y + 1) * POINT_HEIGHT,
                      game_x + x * POINT_WIDTH - (x+1) // 3:game_x + (x + 1) * POINT_WIDTH - (x+1) // 3]
             all_square.append(square)
     if True: # TODO
-        main.show_all(all_square)
+        # main.show_all(all_square)
         pass
+
+    # np.save('block5', all_square[60])
     # plt.figure(figsize=(5, 5))
     # plt.imshow(np.array(all_square[25]))
     # plt.xticks([]), plt.yticks([])
@@ -226,29 +230,29 @@ def hint_one(result, prior):
                                 print('We can remove ：' + str(i) + ',' + str(j) + ' and ' + str(m) + ',' + str(
                                     n) + ", prior =", prior)
                                 hinter.hint(i - 1, j - 1, m - 1, n - 1, prior)
-                                # # 计算当前两个位置的图片在游戏中应该存在的位置
-                                # x1 = game_x + (j - 1) * POINT_WIDTH
-                                # y1 = game_y + (i - 1) * POINT_HEIGHT
-                                # x2 = game_x + (n - 1) * POINT_WIDTH
-                                # y2 = game_y + (m - 1) * POINT_HEIGHT
-                                # print("pos: " + str((x1, y1)) + " " + str((x2, y2)))
-                                # # 模拟鼠标点击第一个图片所在的位置
-                                # win32api.SetCursorPos((x1 + POINT_WIDTH // 2, y1 + POINT_HEIGHT // 2))
-                                # win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x1 + POINT_WIDTH // 2,
-                                #                      y1 + POINT_HEIGHT // 2, 0, 0)
-                                # win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x1 + POINT_WIDTH // 2,
-                                #                      y1 + POINT_HEIGHT // 2, 0, 0)
-                                #
-                                # # 等待随机时间 ，防止检测
-                                # time.sleep(random.uniform(TIME_INTERVAL_MIN, TIME_INTERVAL_MAX))
-                                #
-                                # # 模拟鼠标点击第二个图片所在的位置
-                                # win32api.SetCursorPos((x2 + POINT_WIDTH // 2, y2 + POINT_HEIGHT // 2))
-                                # win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x2 + POINT_WIDTH // 2,
-                                #                      y2 + POINT_HEIGHT // 2, 0, 0)
-                                # win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x2 + POINT_WIDTH // 2,
-                                #                      y2 + POINT_HEIGHT // 2, 0, 0)
-                                # time.sleep(random.uniform(TIME_INTERVAL_MIN, TIME_INTERVAL_MAX))
+                                # 计算当前两个位置的图片在游戏中应该存在的位置
+                                x1 = GAME_X + (j - 1) * POINT_WIDTH
+                                y1 = GAME_Y + (i - 1) * POINT_HEIGHT
+                                x2 = GAME_X + (n - 1) * POINT_WIDTH
+                                y2 = GAME_Y + (m - 1) * POINT_HEIGHT
+                                print("pos: " + str((x1, y1)) + " " + str((x2, y2)))
+                                # 模拟鼠标点击第一个图片所在的位置
+                                win32api.SetCursorPos((x1 + POINT_WIDTH // 2, y1 + POINT_HEIGHT // 2))
+                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x1 + POINT_WIDTH // 2,
+                                                     y1 + POINT_HEIGHT // 2, 0, 0)
+                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x1 + POINT_WIDTH // 2,
+                                                     y1 + POINT_HEIGHT // 2, 0, 0)
+
+                                # 等待随机时间 ，防止检测
+                                time.sleep(random.uniform(TIME_INTERVAL_MIN, TIME_INTERVAL_MAX))
+
+                                # 模拟鼠标点击第二个图片所在的位置
+                                win32api.SetCursorPos((x2 + POINT_WIDTH // 2, y2 + POINT_HEIGHT // 2))
+                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x2 + POINT_WIDTH // 2,
+                                                     y2 + POINT_HEIGHT // 2, 0, 0)
+                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x2 + POINT_WIDTH // 2,
+                                                     y2 + POINT_HEIGHT // 2, 0, 0)
+                                time.sleep(random.uniform(TIME_INTERVAL_MIN, TIME_INTERVAL_MAX))
                                 # 执行消除后返回True
                                 return True
     return False
@@ -258,12 +262,13 @@ def autoHint(squares):
     # 重复一次消除直到到达最多消除次数
     while cnt < 3:
         print('haha')
+        time.sleep(0.4)
         if not hint_one(squares, cnt):
             # 当不再有可消除的方块时结束 ， 返回消除数量
-            return cnt
-        # time.sleep(1.0)
+            break
         cnt += 1
 
+    win32api.SetCursorPos((200, 600))
 
 if __name__ == '__main__':
     root = tk.Tk()
@@ -278,8 +283,8 @@ if __name__ == '__main__':
     hinter.game_pos = game_pos
     # time.sleep(1)
     # # ii. 获取屏幕截图
-    # screen_image = main.getScreenImage()
-    screen_image = cv2.imread("screenshot/screen9.png")[:, :, ::-1]  # TODO
+    screen_image = main.getScreenImage()
+    # screen_image = cv2.imread("screenshot/screen7.png")[:, :, ::-1]  # TODO
     # # # iii. 对截图切片，形成一张二维地图
     all_square_list = getAllSquare(screen_image, game_pos)
     # # iii-2 创建窗体并绘制图像

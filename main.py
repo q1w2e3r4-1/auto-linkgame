@@ -32,10 +32,10 @@ POINT_HEIGHT = 53
 # 空图像编号
 EMPTY_ID = 0
 # 切片处理时候的左上、右下坐标：
-SUB_LT_X = 8
-SUB_LT_Y = 8
-SUB_RB_X = 42
-SUB_RB_Y = 42
+SUB_LT_X = 10
+SUB_LT_Y = 12
+SUB_RB_X = 44
+SUB_RB_Y = 46
 # 游戏的最多消除次数
 MAX_ROUND = 10000
 WINDOW_X = 900
@@ -127,23 +127,23 @@ def get_empty_square():
 
 def get_block():
     content = np.load('block.npy')
-    return content
+    return content[SUB_LT_Y:SUB_RB_Y, SUB_LT_X:SUB_RB_X]
 
 def get_block2():
     content = np.load('block2.npy')
-    return content
+    return content[SUB_LT_Y:SUB_RB_Y, SUB_LT_X:SUB_RB_X]
 
 def get_block3():
     content = np.load('block3.npy')
-    return content
+    return content[SUB_LT_Y:SUB_RB_Y, SUB_LT_X:SUB_RB_X]
 
 def get_block4():
     content = np.load('block4.npy')
-    return content
+    return content[SUB_LT_Y:SUB_RB_Y, SUB_LT_X:SUB_RB_X]
 
 def get_block5():
     content = np.load('block5.npy')
-    return content
+    return content[SUB_LT_Y:SUB_RB_Y, SUB_LT_X:SUB_RB_X]
 
 def getAllSquare(screen_image, game_pos):
     print('Processing pictures...')
@@ -191,7 +191,7 @@ def getAllSquare(screen_image, game_pos):
 def same_image(img1, img2):
     b = abs(img1.astype("int32") - img2.astype("int32"))
     # 若标准差全为0 即两张图片没有区别
-    return np.percentile(b, 80) < 18
+    return np.percentile(b, 80) < 19
 
 
 def isImageExist(img, img_list):
@@ -222,16 +222,16 @@ def getAllSquareTypes(all_square):
     # plt.imshow(all_square[60])
     # plt.show()
     # plt.subplot(1,3,1)
-    # plt.imshow(all_square[11])
+    # plt.imshow(all_square[25])
     # plt.subplot(1,3,2)
-    # plt.imshow(all_square[17])
+    # plt.imshow(all_square[61])
     #
     # plt.subplot(1, 3, 3)
-    # plt.imshow(types[1])
-    # np.save("block5", all_square[62])
+    # plt.imshow(all_square[51])
+    # # np.save("block5", all_square[62])
     # plt.show()
-    # # np.save("block3",all_square[17])
-    # t = abs(all_square[6].astype("int32") - all_square[68].astype("int32"))
+    # # # np.save("block3",all_square[17])
+    # t = abs(all_square[25].astype("int32") - all_square[61].astype("int32"))
     # print( np.percentile(t, 80))
     # plt.imshow(t)
     # plt.show()
